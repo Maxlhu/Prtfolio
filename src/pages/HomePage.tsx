@@ -401,7 +401,7 @@ export function HomePage() {
                 {/* ── Featured (dynamic) 4 projects ────────────────────── */}
                 <div id="projects" className="pt-2">
                     <div className="flex items-center gap-4 justify-center mb-8 mt-10">
-                        <h1 className="text-4xl font-bold text-center">{sectionLabel}</h1>
+                        <h1 className="text-4xl text-slate-200 font-bold text-center">{sectionLabel}</h1>
                         {/* Show a target badge when filtered */}
                         {target && (
                             <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 border border-gray-700 px-2.5 py-1 rounded-full">

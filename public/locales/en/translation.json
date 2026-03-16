@@ -11,7 +11,27 @@
         "education": "Education",
         "experience": "Experience",
         "bigProjects": "My Biggest Projects",
-        "allProjects": "All Projects"
+        "allProjects": "All Projects",
+        "thisPortfolio": "This Portfolio",
+        "contact": "Contact me"
+    },
+    "contact": {
+        "tagline": "I'm always open to new opportunities and connections. Whether you want to discuss a potential collaboration, have a question about my work, or just want to say hi, feel free to reach out!",
+        "email": {
+            "label": "Email",
+            "desc": "maxence.lhuisset@gmail.com",
+            "action": "Send an email"
+        },
+        "linkedin": {
+            "label": "LinkedIn",
+            "desc": "Maxence Lhuisset",
+            "action": "Visit my LinkedIn"
+        },
+        "github": {
+            "label": "GitHub",
+            "desc": "Maxlhu",
+            "action": "Check out my GitHub"
+        }
     },
     "education": {
         "polytechnic": {
@@ -465,44 +485,49 @@
             "section5Text1": "⚠️ The app is still in development and not publicly available yet. For inquiries about the software or the project, please contact me directly through the contact form."
         },
         "hifi": {
-        "hero": "A self-hosted, WiFi-synchronized multiroom audio system built from scratch with Raspberry Pi hardware and a custom React control interface.",
- 
-        "section1": "Overview",
-        "section1Text1": "I built a fully self-hosted multiroom audio system from scratch using Raspberry Pi hardware. The goal was to have synchronized music playing across multiple rooms, controllable from a custom touchscreen dashboard, with Spotify integration and vinyl input support without relying on any subscription-based multiroom platform.",
-        "section1Bullet1": "Raspberry Pi 4 as the central server with a 7\" touchscreen",
-        "section1Bullet2": "Raspberry Pi Zero 2W clients connected to speakers via AUX",
-        "section1Bullet3": "Bluetooth speaker support with per-room volume control",
-        "section1Bullet4": "Spotify Connect + Spotify Web API for full playback control",
-        
-        "section2": "System Architecture",
-        "section2Text1": "The server runs Snapcast, which handles millisecond-precise audio synchronization across all clients over WiFi. Librespot (the open-source Spotify client) is embedded directly into Snapserver as a native source, eliminating the pipe timing issues that come from running it as a separate process.",
-        "section2Text2": "Each client (whether a Zero 2W connected via USB audio adapter or a Bluetooth speaker running a dedicated Snapclient service) receives the same audio stream and plays it in perfect sync. ALSA's plughw interface handles sample rate conversion transparently on each device.",
-        "section2Text3": "The audio chain is entirely local: Spotify streams to librespot on the Pi, Snapserver encodes and distributes it over the LAN, and each Snapclient decodes and outputs it. No cloud dependency, no latency from external services.",
-        
-        "section3": "Technical Challenges",
-        "section3Text1": "The most significant challenge was clock synchronization. Snapcast uses the system's monotonic clock (which starts at boot) to timestamp audio chunks. When two devices boot at different times, the difference in their monotonic clocks causes Snapcast to discard chunks as \"too old\" or \"too far in the future\", resulting in total silence on the client.",
-        "section3Text2": "The fix involved two layers: using Chrony to synchronize wall-clock time via NTP across both devices, and compensating for the remaining monotonic offset using Snapcast's built-in latency parameter. A clean simultaneous reboot of both devices eliminates the offset entirely.",
-        "section3Text3": "Another challenge was librespot's fixed sample rate output. Despite the Snapserver config specifying 48000Hz, librespot always outputs at 44100Hz. Rather than fighting it, the solution was to align the entire pipeline to 44100Hz and use plughw on clients to let ALSA handle any device-level conversion.",
-        "section3Text4": "Getting Spotify OAuth PKCE to work over plain HTTP on a local network required a pure JavaScript SHA-256 implementation, since the Web Crypto API's crypto.subtle is blocked on non-HTTPS origins. The solution was to add a self-signed SSL certificate via OpenSSL and proxy the Snapcast WebSocket through nginx with WSS support.",
-        
-        "section4": "React Control Dashboard",
-        "section4Text1": "The touchscreen interface is a React + Vite app served by nginx over HTTPS, designed specifically for touch input on a 7\" display. It communicates with two real-time APIs simultaneously:",
-        "section4Bullet1": "Snapcast JSON-RPC over WebSocket : per-room volume, mute, source switching",
-        "section4Bullet2": "Spotify Web API : now playing, search, playlist browsing, playback control",
-        "section4Bullet3": "Spotify PKCE OAuth : no backend required, auth runs entirely in the browser",
-        "section4Bullet4": "Auto-reconnecting WebSocket : survives server restarts transparently",
-        "section4Text2": "The app uses Zustand for state management and polls the Spotify API every 3 seconds for now-playing updates. Room cards update optimistically on volume changes for instant UI feedback, with the WebSocket confirming the actual state.",
-        
-        "section5": "Bluetooth Integration",
-        "section5Text1": "Bluetooth speakers are integrated as first-class rooms in the system. Each paired speaker runs its own dedicated Snapclient systemd service with a unique hostID, routing audio through PulseAudio's Bluetooth sink. This makes them appear automatically as separate rooms in the dashboard with individual volume sliders.",
-        "section5Text2": "Bluetooth introduces ~100-200ms of inherent latency. This is compensated per-service using Snapcast's --latency parameter, keeping all rooms audibly synchronized regardless of the output medium.",
-        
-        "section6": "Learnings",
-        "section6Text1": "This project was a deep dive into Linux audio, networking, and embedded systems far more complex than expected at the start. Key takeaways:",
-        "section6Bullet1": "Linux audio stack (ALSA, PulseAudio, PipeWire) is powerful but fragile - small mismatches in sample rates or buffer sizes cause silent failures",
-        "section6Bullet2": "Monotonic vs wall-clock time is a real distributed systems problem, even at home-lab scale",
-        "section6Bullet3": "Browser security constraints (HTTPS, crypto.subtle, mixed content) apply even on local networks and require real engineering solutions",
-        "section6Bullet4": "Systemd is the right tool for managing multiple interdependent audio services - restart policies and dependency ordering matter a lot"
+            "hero": "A self-hosted, WiFi-synchronized multiroom audio system built from scratch with Raspberry Pi hardware and a custom React control interface.",
+    
+            "section1": "Overview",
+            "section1Text1": "I built a fully self-hosted multiroom audio system from scratch using Raspberry Pi hardware. The goal was to have synchronized music playing across multiple rooms, controllable from a custom touchscreen dashboard, with Spotify integration and vinyl input support without relying on any subscription-based multiroom platform.",
+            "section1Bullet1": "Raspberry Pi 4 as the central server with a 7\" touchscreen",
+            "section1Bullet2": "Raspberry Pi Zero 2W clients connected to speakers via AUX",
+            "section1Bullet3": "Bluetooth speaker support with per-room volume control",
+            "section1Bullet4": "Spotify Connect + Spotify Web API for full playback control",
+            
+            "section2": "System Architecture",
+            "section2Text1": "The server runs Snapcast, which handles millisecond-precise audio synchronization across all clients over WiFi. Librespot (the open-source Spotify client) is embedded directly into Snapserver as a native source, eliminating the pipe timing issues that come from running it as a separate process.",
+            "section2Text2": "Each client (whether a Zero 2W connected via USB audio adapter or a Bluetooth speaker running a dedicated Snapclient service) receives the same audio stream and plays it in perfect sync. ALSA's plughw interface handles sample rate conversion transparently on each device.",
+            "section2Text3": "The audio chain is entirely local: Spotify streams to librespot on the Pi, Snapserver encodes and distributes it over the LAN, and each Snapclient decodes and outputs it. No cloud dependency, no latency from external services.",
+            
+            "section3": "Technical Challenges",
+            "section3Text1": "The most significant challenge was clock synchronization. Snapcast uses the system's monotonic clock (which starts at boot) to timestamp audio chunks. When two devices boot at different times, the difference in their monotonic clocks causes Snapcast to discard chunks as \"too old\" or \"too far in the future\", resulting in total silence on the client.",
+            "section3Text2": "The fix involved two layers: using Chrony to synchronize wall-clock time via NTP across both devices, and compensating for the remaining monotonic offset using Snapcast's built-in latency parameter. A clean simultaneous reboot of both devices eliminates the offset entirely.",
+            "section3Text3": "Another challenge was librespot's fixed sample rate output. Despite the Snapserver config specifying 48000Hz, librespot always outputs at 44100Hz. Rather than fighting it, the solution was to align the entire pipeline to 44100Hz and use plughw on clients to let ALSA handle any device-level conversion.",
+            "section3Text4": "Getting Spotify OAuth PKCE to work over plain HTTP on a local network required a pure JavaScript SHA-256 implementation, since the Web Crypto API's crypto.subtle is blocked on non-HTTPS origins. The solution was to add a self-signed SSL certificate via OpenSSL and proxy the Snapcast WebSocket through nginx with WSS support.",
+            
+            "section4": "React Control Dashboard",
+            "section4Text1": "The touchscreen interface is a React + Vite app served by nginx over HTTPS, designed specifically for touch input on a 7\" display. It communicates with two real-time APIs simultaneously:",
+            "section4Bullet1": "Snapcast JSON-RPC over WebSocket : per-room volume, mute, source switching",
+            "section4Bullet2": "Spotify Web API : now playing, search, playlist browsing, playback control",
+            "section4Bullet3": "Spotify PKCE OAuth : no backend required, auth runs entirely in the browser",
+            "section4Bullet4": "Auto-reconnecting WebSocket : survives server restarts transparently",
+            "section4Text2": "The app uses Zustand for state management and polls the Spotify API every 3 seconds for now-playing updates. Room cards update optimistically on volume changes for instant UI feedback, with the WebSocket confirming the actual state.",
+            
+            "section5": "Bluetooth Integration",
+            "section5Text1": "Bluetooth speakers are integrated as first-class rooms in the system. Each paired speaker runs its own dedicated Snapclient systemd service with a unique hostID, routing audio through PulseAudio's Bluetooth sink. This makes them appear automatically as separate rooms in the dashboard with individual volume sliders.",
+            "section5Text2": "Bluetooth introduces ~100-200ms of inherent latency. This is compensated per-service using Snapcast's --latency parameter, keeping all rooms audibly synchronized regardless of the output medium.",
+            
+            "section6": "Learnings",
+            "section6Text1": "This project was a deep dive into Linux audio, networking, and embedded systems far more complex than expected at the start. Key takeaways:",
+            "section6Bullet1": "Linux audio stack (ALSA, PulseAudio, PipeWire) is powerful but fragile - small mismatches in sample rates or buffer sizes cause silent failures",
+            "section6Bullet2": "Monotonic vs wall-clock time is a real distributed systems problem, even at home-lab scale",
+            "section6Bullet3": "Browser security constraints (HTTPS, crypto.subtle, mixed content) apply even on local networks and require real engineering solutions",
+            "section6Bullet4": "Systemd is the right tool for managing multiple interdependent audio services - restart policies and dependency ordering matter a lot"
+        },
+        "portfolio": {
+            "title": "Portfolio Website",
+            "description": "This portfolio website itself! Built with React and Vite, hosted on GitHub Pages, and designed to showcase my projects and experience in a clean, responsive format.",
+            "cta": "Check the code"
         }
     },
     "filters": {

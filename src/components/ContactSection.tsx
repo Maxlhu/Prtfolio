@@ -12,19 +12,19 @@ const CONTACT_LINKS: ContactLink[] = [
         labelKey: "contact.email.label",
         descKey: "contact.email.desc",
         actionKey: "contact.email.action",
-        href: "mailto:your@email.com", // ← replace
+        href: "mailto:maxence.lhuisset@gmail.com", // ← replace
     },
     {
         labelKey: "contact.github.label",
         descKey: "contact.github.desc",
         actionKey: "contact.github.action",
-        href: "https://github.com/yourusername", // ← replace
+        href: "https://github.com/Maxlhu", // ← replace
     },
     {
         labelKey: "contact.linkedin.label",
         descKey: "contact.linkedin.desc",
         actionKey: "contact.linkedin.action",
-        href: "https://linkedin.com/in/yourprofile", // ← replace
+        href: "https://linkedin.com/in/maxence-lhuisset-122924227", // ← replace
     },
 ];
 
@@ -45,7 +45,7 @@ function ContactCard({ link }: { link: ContactLink }) {
                 {t(link.labelKey)}
             </span>
 
-            <span className="font-mono text-sm text-gray-300 group-hover:text-white transition-colors break-all">
+            <span className="font-mono text-md text-gray-300 group-hover:text-white transition-colors break-all">
                 {t(link.descKey)}
             </span>
 

@@ -7,7 +7,7 @@ export function PortfolioSection() {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
-    const techs = ["React", "Vite", "Tailwind", "i18next", "Three.js"];
+    const techs = ["React", "Vite", "Tailwind", "i18next", "Github Pages"];
 
     return (
         <div id="thisPortfolio" className="pt-2 px-4 mb-16 mt-10">
@@ -35,22 +35,12 @@ export function PortfolioSection() {
                     {/* ── Left: text content ─────────────────────────────── */}
                     <div className="flex-1 p-8 flex flex-col justify-between gap-6 z-10">
                         <div>
-                            {/* Badge row */}
-                            <div className="flex items-center gap-3 mb-5">
-                                <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 border border-gray-700 px-2.5 py-1 rounded-full">
-                                    {t("portfolio.badge")}
-                                </span>
-                                <span className="text-gray-600 group-hover:text-gray-300 transition-colors duration-300 text-sm">
-                                    ↗
-                                </span>
-                            </div>
-
                             <h2 className="text-2xl font-bold text-slate-100 mb-4 group-hover:text-white transition-colors">
-                                {t("portfolio.title")}
+                                {t("projects.portfolio.title")}
                             </h2>
 
                             <p className="font-mono text-sm text-gray-400 leading-relaxed max-w-xl">
-                                {t("portfolio.description")}
+                                {t("projects.portfolio.description")}
                             </p>
                         </div>
 
@@ -70,7 +60,7 @@ export function PortfolioSection() {
 
                         {/* CTA */}
                         <div className="flex items-center gap-2 font-mono text-xs text-gray-500 group-hover:text-gray-200 transition-colors">
-                            <span>{t("portfolio.cta")}</span>
+                            <span>{t("projects.portfolio.cta")}</span>
                             <span className="translate-x-0 group-hover:translate-x-1.5 transition-transform duration-200">
                                 →
                             </span>
