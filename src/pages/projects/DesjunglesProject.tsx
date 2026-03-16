@@ -1,6 +1,10 @@
 import { useTranslation } from "react-i18next";
 import desjungles_preview from "../../assets/desjungles_preview.png";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import desjungles_home from "../../assets/desjungles_home.png";
+import desjungles_screen1 from "../../assets/desjungles_screen1.png";
+import desjungles_screen2 from "../../assets/desjungles_screen2.png";
+import desjungles_screen3 from "../../assets/desjungles_screen3.png";
+import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
 
 export function DesjunglesProjectPage() {
 
@@ -9,7 +13,7 @@ export function DesjunglesProjectPage() {
         <div className="min-h-screen w-screen bg-black">
             {/* Hero */}
             <div
-                style={{ backgroundImage: `url(${desjungles_preview})` }}
+                style={{ backgroundImage: `url(${desjungles_home})` }}
                 className="relative flex flex-col justify-end bg-cover bg-center h-screen"
             >
                 {/* Gradient overlay */}
@@ -17,13 +21,13 @@ export function DesjunglesProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Case Study
+                        {t("projects.desjungles.context")}
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
-                        Project Title
+                        {t("projects.desjungles.title")}
                     </h1>
                     <p className="text-xl text-gray-300 font-light max-w-xl leading-relaxed">
-                        Project description goes here. A short, punchy summary of what this is about.
+                        {t("projects.desjungles.description")}
                     </p>
                 </div>
 
@@ -39,7 +43,7 @@ export function DesjunglesProjectPage() {
                 <SectionText text={t("projects.desjungles.section1Text1")} />
 
                 <SectionTitle title={t("projects.desjungles.section2")} />
-                <MediumProjectImage imageUrl={desjungles_preview} alt="Project Screenshot" />
+                <ProjectImage imageUrl={desjungles_screen1} alt="Your Account" />
 
                 <SectionText text={t("projects.desjungles.section2Text1")} />
 
@@ -49,18 +53,28 @@ export function DesjunglesProjectPage() {
                     <BulletPoint text={t("projects.desjungles.section2Bullet3")} />
                     <BulletPoint text={t("projects.desjungles.section2Bullet4")} />
                 </ul>
+                <div className="flex items-center w-full justify-center flex-wrap gap-8 mt-8">
+                    <SmallProjectImage imageUrl={desjungles_screen2} alt="secret mode" />
+                    <SmallProjectImage imageUrl={desjungles_screen3} alt="Transaction UI" />
+                </div>
 
                 <SectionTitle title={t("projects.desjungles.section3")} />
                 <SectionText text={t("projects.desjungles.section3Text1")} />
-                // SUBTITLE
+                <p className="text-green-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.desjungles.section3Sub1")}
+                </p>
                 <SectionText text={t("projects.desjungles.section3Text2")} />
-                // SUBTITLE
+                <p className="text-green-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.desjungles.section3Sub2")}
+                </p>
                 <SectionText text={t("projects.desjungles.section3Text3")} />
-                // SUBTITLE
+                <p className="text-green-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.desjungles.section3Sub3")}
+                </p>
                 <SectionText text={t("projects.desjungles.section3Text4")} />
-                <CodeBlock code={`function example() {
-                console.log("This is an example code block.");
-                }`} />
+                <CodeBlock code={`    const transferMatch = text.match(
+        /transfer\s+(\d+)\s*(?:coins?)?\s+from\s+(?:my\s+)?([\w\s]+?)\s+to\s+(?:my\s+)?([\w\s]+)/i
+    );`} title="Regex example"/>
                 <SectionText text={t("projects.desjungles.section3Text5")} />
 
                 <SectionTitle title={t("projects.desjungles.section4")} />
@@ -68,6 +82,14 @@ export function DesjunglesProjectPage() {
 
                 <SectionTitle title={t("projects.desjungles.section5")} />
                 <SectionText text={t("projects.desjungles.section5Text1")} />
+                <a href="https://github.com/cristina-trofimov/desjungles/tree/master" target="_blank" className="text-emerald-400 hover:underline">
+                    Github
+                </a>
+                <br />
+                <a href="https://devpost.com/software/desjungles" target="_blank" className="text-emerald-400 hover:underline">
+                    Devpost
+                </a>
+
             </div>
         </div>
     );

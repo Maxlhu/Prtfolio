@@ -13,7 +13,8 @@
         "bigProjects": "My Biggest Projects",
         "allProjects": "All Projects",
         "thisPortfolio": "This Portfolio",
-        "contact": "Contact me"
+        "contact": "Contact me",
+        "projectsTitle2": "projects"
     },
     "contact": {
         "tagline": "I'm always open to new opportunities and connections. Whether you want to discuss a potential collaboration, have a question about my work, or just want to say hi, feel free to reach out!",
@@ -87,6 +88,9 @@
             "section2Bullet3": "The ambient light in the user's environment will dictate the theme mode of the user's application.",
             "section2Bullet4": "When the user is in motion, they will be immersed in a jungle-like environment. Furthermore, the application will show the Home screen while disabling any other navigation buttons, ensuring security.",
             "section3": "How we built it",
+            "section3Sub1": "Environment Detection",
+            "section3Sub2": "Face Detection",
+            "section3Sub3": "Voice Command Processing",
             "section3Text1": "When the user is in motion, they will be immersed in a jungle-like environment. Furthermore, the application will show the Home screen while disabling any other navigation buttons, ensuring security.",
             "section3Text2": "Using Expo libraries we were able to use the gyroscope and detect movement. For the light sensor, we were able to use the natively provided one on Android. This sensor wasn’t available on Android so we used exposure on pictures taken every 1.5 seconds by the face camera.",
             "section3Text3": "To detect the amount of faces  we used the model BlazeFace, this model is made to recognize faces but we only used it to count the amount detected. When the amount is 0 or 2 we use context to activate secret mode",
@@ -95,7 +99,7 @@
             "section4": "My role in this project",
             "section4Text1": "As part of the team, I participated in the architecture conception at the beginning of the Hackathon. For the rest of the competition, my task was managing the general app architecture, building the database using mongo. I chose and integrated TensorFlow and the face recognition model. Finally, I built the voice command and text to speech system.",
             "section5": "Check it out !",
-            "section5Text1": "--- To Fill Out ---"
+            "section5Text1": "You can get the app and our code here :"
         },
         "trydon": {
             "title": "Trydon - AI powered size recommendation for online fashion",
@@ -168,7 +172,7 @@
             "section5": "My role in this project",
             "section5Text1": "During the GameJam, I worked on the core audio interaction system. I implemented the microphone input and the frequency detection system that maps player sounds to crystal activation. I also contributed to the gameplay design to ensure the puzzles based on sound frequencies were intuitive and fun to experiment with.",
             "section6": "Check it out !",
-            "section6Text1": "--- To Fill Out ---"
+            "section6Text1": "You can install the game from here :"
         },
         "polygames": {
             "title": "Dia Jiro - sound-based video game enigma",
@@ -224,7 +228,7 @@
             "section4Bullet3": "Database — Designed the PostgreSQL schema with TypeORM: entities for users, calendar events, Wrike tasks, prediction records, and correction history, with the right indexes and relations to support the feedback loop efficiently.",
             "section4Bullet4": "Frontend — Rebuilt the React interface with a liquid-glass design system: frosted-glass card components, layered blur and transparency effects, and a layout that makes the event-to-task review flow feel effortless.",
             "section5": "Check it out !",
-            "section5Text1": "--- To Fill Out ---"
+            "section5Text1": "⚠️ As this project was made for an internal tool and is protected by a non-disclosure agreement, the code and application cannot be shared publicly. If you want to know more about the technical details or see code snippets, feel free to reach out to me directly !"
         },
         "trydonWebsite": {
             "title": "Trydon.ca - Company website & customer platform",
