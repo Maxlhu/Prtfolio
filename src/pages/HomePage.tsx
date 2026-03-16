@@ -427,9 +427,10 @@ export function HomePage() {
                 </div>
 
                 {/* ── All projects ─────────────────────────────────────── */}
-                <div id="allProjects" className="pt-2">
+                <div id="allProjects">
                     <div className="flex items-baseline gap-4 ml-4 mb-8 mt-10">
                         <h1 className="text-slate-100 text-4xl font-bold">{t("sections.allProjects")}</h1>
+                        <p>- 13 {t("sections.projectsTitle2")}</p>
                     </div>
                 </div>
 

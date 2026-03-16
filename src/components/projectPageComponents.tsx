@@ -46,8 +46,8 @@ export function MediumProjectImage({ imageUrl, alt }: { imageUrl: string; alt: s
 
 export function SmallProjectImage({ imageUrl, alt }: { imageUrl: string; alt: string }) {
     return (
-        <figure className="w-48 rounded-xl overflow-hidden shadow-lg border border-gray-100 flex-shrink-0">
-            <img src={imageUrl} alt={alt} className="w-full h-36 object-cover object-top" />
+        <figure className="w-64 rounded-xl overflow-hidden shadow-lg border border-gray-100 flex-shrink-0">
+            <img src={imageUrl} alt={alt} className="w-full h-42 object-cover object-top" />
             <figcaption className="text-xs text-gray-400 text-center py-2 bg-gray-50 font-mono">
                 {alt}
             </figcaption>
@@ -69,13 +69,16 @@ export function ProjectVideo({ videoUrl, alt }: { videoUrl: string; alt: string 
     );
 }
 
-export function CodeBlock({ code }: { code: string }) {
+export function CodeBlock({ code, title }: { code: string; title?: string }) {
     return (
         <div className="my-8 rounded-xl overflow-hidden shadow-lg">
             <div className="flex items-center gap-2 bg-gray-200 px-4 py-3 border-b border-gray-50">
                 <span className="w-3 h-3 rounded-full bg-red-400" />
                 <span className="w-3 h-3 rounded-full bg-yellow-400" />
                 <span className="w-3 h-3 rounded-full bg-green-400" />
+                {title && (
+                    <span className="ml-4 text-sm font-semibold text-gray-600">{title}</span>
+                )}
             </div>
             <pre className="bg-gray-100 p-6 overflow-x-auto">
                 <code className="text-sm text-semibold font-mono text-emerald-700 leading-relaxed">{code}</code>

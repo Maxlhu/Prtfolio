@@ -6,136 +6,189 @@ import obelisk_preview    from "../assets/obelisk_preview.png";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const CATEGORIES = [
-    {
-        id: "software",
+type CategoryId = "software" | "hardware" | "ai" | "cybersecurity" | "videogame";
+
+type Project = {
+    title: string;
+    description: string;
+    imageUrl: string;
+    projectUrl: string;
+    techs: string[];
+    context: string;
+    reward?: string;
+    categories: CategoryId[];
+};
+
+type Category = {
+    id: CategoryId;
+    index: string;
+    label: string;
+    summary: string;
+    projects: Project[];
+};
+
+const CATEGORY_META: Record<CategoryId, { index: string; label: string; summary: string }> = {
+    software: {
         index: "01",
         label: "Software",
         summary: "Web platforms, full-stack systems & developer tooling.",
-        projects: [
-            {
-                title: "Trydon Website",
-                description: "Full-stack marketing & dashboard platform for Trydon's commercial operations.",
-                imageUrl: trydon_preview,
-                techs: ["React", "Node.js", "PostgreSQL"],
-                context: "Entrepreneurship",
-            },
-            {
-                title: "ConUHacks VI",
-                description: "AI-powered financial tool built in 24 h for the Desjardins sponsor challenge.",
-                imageUrl: desjungles_preview,
-                techs: ["Python", "React", "FastAPI", "OpenAI"],
-                context: "Hackathon",
-                reward: "1st — sponsor prize",
-            },
-            {
-                title: "PI3 Capstone",
-                description: "End-to-end engineering capstone with full-stack implementation and ML pipeline.",
-                imageUrl: desjungles_preview,
-                techs: ["Python", "React", "TensorFlow"],
-                context: "School",
-            },
-        ],
     },
-    {
-        id: "hardware",
+    hardware: {
         index: "02",
         label: "Hardware",
         summary: "Embedded systems, electronics & physical computing.",
-        projects: [
-            {
-                title: "PolyHX Challenge",
-                description: "Embedded system built during a hardware-focused hackathon at Polytechnique.",
-                imageUrl: desjungles_preview,
-                techs: ["Arduino", "C++", "Python"],
-                context: "Hackathon",
-                reward: "Finalist",
-            },
-            {
-                title: "Sound System",
-                description: "Custom DSP audio system with real-time equalizer and wireless control.",
-                imageUrl: desjungles_preview,
-                techs: ["C++", "Arduino"],
-                context: "Personal",
-            },
-        ],
     },
-    {
-        id: "ai",
+    ai: {
         index: "03",
         label: "AI",
         summary: "Machine learning, intelligent agents & data pipelines.",
-        projects: [
-            {
-                title: "Trydon Algo",
-                description: "Proprietary ML matching algorithm powering Trydon's core recommendation engine.",
-                imageUrl: trydon_preview,
-                techs: ["Python", "FastAPI", "Docker", "TensorFlow"],
-                context: "Entrepreneurship",
-            },
-            {
-                title: "HMC-LS Research",
-                description: "Academic research on hierarchical multi-label classification systems.",
-                imageUrl: desjungles_preview,
-                techs: ["Python", "PyTorch"],
-                context: "School",
-            },
-            {
-                title: "Hex AI Agent",
-                description: "Minimax + MCTS agent that plays the Hex board game at competitive level.",
-                imageUrl: desjungles_preview,
-                techs: ["Java", "Python"],
-                context: "School",
-            },
-        ],
     },
-    {
-        id: "cybersecurity",
+    cybersecurity: {
         index: "04",
         label: "Cybersecurity",
-        summary: "Low-level exploitation, CTF tooling & reverse engineering.",
-        projects: [
-            {
-                title: "KPI extraction system",
-                description: "Internal tool for extracting and processing security KPIs from raw telemetry at Desjardins.",
-                imageUrl: obelisk_preview,
-                projectUrl: "/project/desjardins-kpi",
-                techs: ["Python", "Undisclosed security tools"],
-                context: "Work",
-            },
-        ],
+        summary: "Security automation, monitoring & cyber tooling.",
     },
-    {
-        id: "videogame",
+    videogame: {
         index: "05",
         label: "VideoGame",
         summary: "Game design, interactive experiences & real-time engines.",
-        projects: [
-            {
-                title: "Dia-Jiro",
-                description: "2D platformer developed for the PolyGames student game jam.",
-                imageUrl: dia_jiro_preview,
-                techs: ["Unity", "C#"],
-                context: "School",
-                reward: "Best gameplay",
-            },
-            {
-                title: "Escape the Engine",
-                description: "First-person puzzle escape room built from scratch in Unity.",
-                imageUrl: desjungles_preview,
-                techs: ["Unity", "C#"],
-                context: "Personal",
-            },
-        ],
+    },
+};
+
+const PROJECTS: Project[] = [
+    {
+        title: "Desjungles",
+        description: "AI-powered banking app for money transfers using natural-language commands.",
+        imageUrl: desjungles_preview,
+        projectUrl: "/project/desjungles",
+        techs: ["React", "Python", "NLP", "Regex"],
+        context: "Hackathon",
+        reward: "1st - ConUHacks VI sponsor prize",
+        categories: ["software", "ai"],
+    },
+    {
+        title: "Trydon",
+        description: "AI size recommendation engine that predicts garment fit from body measurements.",
+        imageUrl: trydon_preview,
+        projectUrl: "/project/trydon",
+        techs: ["React", "Machine Learning", "Scoring"],
+        context: "Entrepreneurship",
+        categories: ["software", "ai"],
+    },
+    {
+        title: "Dia Jiro",
+        description: "Voice-controlled cave exploration game where sound frequency activates crystals.",
+        imageUrl: dia_jiro_preview,
+        projectUrl: "/project/diajiro",
+        techs: ["Unity", "C#", "Audio Analysis"],
+        context: "School",
+        categories: ["videogame", "software"],
+    },
+    {
+        title: "Obelisk",
+        description: "Recommendation system using a 2-Tower architecture for personalized results.",
+        imageUrl: obelisk_preview,
+        projectUrl: "/project/obelisk",
+        techs: ["React", "NestJS", "Python", "PostgreSQL"],
+        context: "Work",
+        categories: ["software", "ai"],
+    },
+    {
+        title: "Desjardins KPI",
+        description: "Cybersecurity KPI automation platform for enterprise perimeter monitoring.",
+        imageUrl: obelisk_preview,
+        projectUrl: "/project/desjardins-kpi",
+        techs: ["Python", "Automation", "Monitoring"],
+        context: "Work",
+        categories: ["cybersecurity", "software"],
+    },
+    {
+        title: "Hex AI",
+        description: "Hex game AI agent built with minimax and alpha-beta pruning.",
+        imageUrl: desjungles_preview,
+        projectUrl: "/project/hex-ai",
+        techs: ["Python", "Minimax", "Alpha-Beta"],
+        context: "School",
+        categories: ["ai", "software", "videogame"],
+    },
+    {
+        title: "Quiz Game",
+        description: "Real-time multiplayer quiz with WebSockets and AI-generated questions.",
+        imageUrl: desjungles_preview,
+        projectUrl: "/project/quiz-game",
+        techs: ["Angular", "Flutter", "NestJS", "WebSocket", "OpenAI"],
+        context: "Hackathon",
+        categories: ["software", "videogame", "ai"],
+    },
+    {
+        title: "Trydon.ca",
+        description: "Startup website with ROI calculator, pricing flow and authentication.",
+        imageUrl: trydon_preview,
+        projectUrl: "/project/trydon-website",
+        techs: ["Angular", "AWS Lambda", "React", "Auth"],
+        context: "Entrepreneurship",
+        categories: ["software"],
+    },
+    {
+        title: "Escape The Engine",
+        description: "2D platformer where one player mechanic is removed at each new level.",
+        imageUrl: desjungles_preview,
+        projectUrl: "/project/escape-the-engine",
+        techs: ["Unity", "C#", "2D Physics"],
+        context: "Personal",
+        categories: ["videogame", "software"],
+    },
+    {
+        title: "Homunculus",
+        description: "Neuroscience MEA software with real-time acquisition and signal processing.",
+        imageUrl: obelisk_preview,
+        projectUrl: "/project/homunculus",
+        techs: ["Rust", "Tauri", "React", "Serial"],
+        context: "School",
+        categories: ["hardware", "software"],
+    },
+    {
+        title: "Solar Navigation",
+        description: "Space trajectory planner using gravity assists and NASA data.",
+        imageUrl: desjungles_preview,
+        projectUrl: "/project/solar-system",
+        techs: ["Python", "React", "NASA API", "Orbital Mechanics"],
+        context: "Hackathon",
+        reward: "2nd - PolyHX 2024",
+        categories: ["software", "ai"],
+    },
+    {
+        title: "GameNight",
+        description: "In-progress mobile party game with timers, dice and multiplayer sessions.",
+        imageUrl: desjungles_preview,
+        projectUrl: "/project/game-night",
+        techs: ["React Native", "NestJS", "Expo", "WebSocket"],
+        context: "Startup",
+        categories: ["software", "videogame"],
+    },
+    {
+        title: "HiFi Multiroom",
+        description: "Raspberry Pi multiroom audio system with synchronized network playback.",
+        imageUrl: obelisk_preview,
+        projectUrl: "/project/hifi",
+        techs: ["Snapcast", "Raspberry Pi", "Linux", "React"],
+        context: "Personal",
+        categories: ["hardware", "software"],
     },
 ];
 
+const CATEGORIES: Category[] = (Object.keys(CATEGORY_META) as CategoryId[]).map((id) => ({
+    id,
+    ...CATEGORY_META[id],
+    projects: PROJECTS.filter((project) => project.categories.includes(id)),
+}));
+
 // ─── Inner project card ───────────────────────────────────────────────────────
 
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: Project }) {
     return (
         <button className="group flex flex-col justify-between border border-white/10 rounded-sm p-5 gap-4
-                        transition-all duration-300 hover:border-white/30 hover:bg-white/[0.03]"
+                        transition-all duration-300 hover:border-white/30 hover:bg-white/3"
                         onClick={() => window.open(project.projectUrl || "#", "_blank")}>
             <div className="flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-2">
@@ -172,7 +225,7 @@ function ProjectCard({ project }) {
 
 // ─── Single accordion row ─────────────────────────────────────────────────────
 
-function CategoryRow({ category, isOpen, onToggle }) {
+function CategoryRow({ category, isOpen, onToggle }: { category: Category; isOpen: boolean; onToggle: () => void }) {
     return (
         <div className="border-b border-white/10">
 
@@ -180,7 +233,7 @@ function CategoryRow({ category, isOpen, onToggle }) {
             <button
                 onClick={onToggle}
                 className="group w-full flex items-center gap-6 py-6 px-1 text-left
-                           transition-colors duration-300 hover:bg-white/[0.02]"
+                           transition-colors duration-300 hover:bg-white/2"
             >
                 <span
                     className="font-mono text-xs tabular-nums transition-colors duration-300"
@@ -261,8 +314,8 @@ function CategoryRow({ category, isOpen, onToggle }) {
 // ─── Root export ──────────────────────────────────────────────────────────────
 
 export function ProjectCategories() {
-    const [openId, setOpenId] = useState(null);
-    const toggle = (id) => setOpenId((prev) => (prev === id ? null : id));
+    const [openId, setOpenId] = useState<CategoryId | null>(null);
+    const toggle = (id: CategoryId) => setOpenId((prev) => (prev === id ? null : id));
 
     return (
         <div className="w-full px-4">

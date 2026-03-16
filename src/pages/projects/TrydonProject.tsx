@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
-import trydon_preview from "../../assets/trydon_preview.png";
+import trydon_hero from "../../assets/trydon_hero.png";
+import trydon_screen1 from "../../assets/trydon_screen1.png"
+import trydon_screen2 from "../../assets/trydon_screen2.png"
+import trydon_screen3 from "../../assets/trydon_screen3.png"
 import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
 
 export function TrydonProjectPage() {
@@ -11,7 +14,7 @@ export function TrydonProjectPage() {
 
             {/* HERO */}
             <div
-                style={{ backgroundImage: `url(${trydon_preview})` }}
+                style={{ backgroundImage: `url(${trydon_hero})` }}
                 className="relative flex flex-col justify-end bg-cover bg-center h-screen"
             >
 
@@ -46,7 +49,7 @@ export function TrydonProjectPage() {
 
                 {/* WHAT IT DOES */}
                 <SectionTitle title={t("projects.trydon.section2")} />
-                <MediumProjectImage imageUrl={trydon_preview} alt="Trydon Interface" />
+                <ProjectImage imageUrl={trydon_screen1} alt="Trydon Interface" />
 
                 <SectionText text={t("projects.trydon.section2Text1")} />
 
@@ -78,10 +81,12 @@ export function TrydonProjectPage() {
     if (score < 5) return "Good Fit";
     return "Loose Fit";
 }`} />
-                <ProjectImage imageUrl={trydon_preview} alt="Trydon Interface" />
 
                 <SectionText text={t("projects.trydon.section3Text4")} />
-                <ProjectImage imageUrl={trydon_preview} alt="Trydon Interface" />
+                <div className="flex items-center w-full justify-center flex-wrap gap-8 mt-8">
+                    <SmallProjectImage imageUrl={trydon_screen2} alt="User recommandations" />
+                    <SmallProjectImage imageUrl={trydon_screen3} alt="Commercial Interface" />
+                </div>
                 
                 <SectionTitle title={t("projects.trydon.section4")} />
                 <SectionText text={t("projects.trydon.section4Text1")} />

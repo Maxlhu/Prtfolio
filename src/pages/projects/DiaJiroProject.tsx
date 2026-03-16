@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import diajiro_preview from "../../assets/dia_jiro_preview.png";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import diajiro_screen1 from "../../assets/dia_jiro_screen1.png";
+import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
 
 export function DiaJiroProjectPage() {
 
@@ -46,7 +47,6 @@ export function DiaJiroProjectPage() {
 
                 {/* GAMEPLAY */}
                 <SectionTitle title={t("projects.diajiro.section2")} />
-                <MediumProjectImage imageUrl={diajiro_preview} alt="Dia Jiro gameplay" />
 
                 <SectionText text={t("projects.diajiro.section2Text1")} />
 
@@ -56,6 +56,7 @@ export function DiaJiroProjectPage() {
                     <BulletPoint text={t("projects.diajiro.section2Bullet3")} />
                     <BulletPoint text={t("projects.diajiro.section2Bullet4")} />
                 </ul>
+                <ProjectImage imageUrl={diajiro_screen1} alt="Final room enigma" />
 
                 {/* HOW IT WORKS */}
                 <SectionTitle title={t("projects.diajiro.section3")} />
@@ -98,6 +99,9 @@ export function DiaJiroProjectPage() {
 
                 <SectionTitle title={t("projects.diajiro.section6")} />
                 <SectionText text={t("projects.diajiro.section6Text1")} />
+                <a href="https://maxlhu.itch.io/dia-jiro" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                    itch.io
+                </a>
 
             </div>
         </div>
