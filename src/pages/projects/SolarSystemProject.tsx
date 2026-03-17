@@ -3,6 +3,7 @@ import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, 
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 import solar_nav_home from "../../assets/solar_nav_home.png";
+import solar_nav_screen1 from "../../assets/solar_nav_screen1.png";
 
 // import solar_preview from "../../assets/solar_preview.png";
 const solar_preview = "";
@@ -32,52 +33,18 @@ export function SolarSystemProjectPage() {
                 <HeaderDesktop />
             </div>
             {/* ── Hero — deep space, star field, cosmic ── */}
-            <div className="relative flex flex-col justify-end h-screen overflow-hidden bg-black">
+            <div className="relative flex flex-col justify-end h-screen overflow-hidden bg-black" style={{ backgroundImage: `url(${solar_nav_screen1})` }}>
 
                 {/* Star field */}
-                <div className="absolute inset-0 overflow-hidden">
-                    {Array.from({ length: 120 }).map((_, i) => (
-                        <div
-                            key={i}
-                            className="absolute rounded-full bg-white"
-                            style={{
-                                width: `${Math.random() * 2 + 1}px`,
-                                height: `${Math.random() * 2 + 1}px`,
-                                top: `${Math.random() * 100}%`,
-                                left: `${Math.random() * 100}%`,
-                                opacity: Math.random() * 0.7 + 0.2,
-                            }}
-                        />
-                    ))}
-                </div>
-
-                {/* Nebula glow */}
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background:
-                            "radial-gradient(ellipse 70% 50% at 70% 40%, rgba(99,102,241,0.2) 0%, transparent 55%), radial-gradient(ellipse 40% 60% at 20% 70%, rgba(168,85,247,0.15) 0%, transparent 50%), radial-gradient(ellipse 30% 30% at 85% 75%, rgba(59,130,246,0.1) 0%, transparent 45%)",
-                    }}
-                />
-
-                {/* Planet silhouette — decorative */}
-                <div
-                    className="absolute right-20 top-16 rounded-full opacity-20"
-                    style={{
-                        width: "280px",
-                        height: "280px",
-                        background: "radial-gradient(circle at 35% 35%, rgba(251,191,36,0.8), rgba(180,83,9,0.4), transparent 70%)",
-                        boxShadow: "0 0 80px 20px rgba(251,191,36,0.08)",
-                    }}
-                />
+                
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                 {/* Award badge */}
                 <div className="absolute top-12 right-10 z-10 border border-yellow-600/50 bg-yellow-950/30 backdrop-blur px-5 py-3 font-mono text-right">
-                    <p className="text-yellow-400 text-xs tracking-widest uppercase">PolyHX 2024</p>
-                    <p className="text-white text-sm font-bold mt-1">🥈 Second Place</p>
-                    <p className="text-yellow-200/60 text-xs mt-0.5">Space Challenge</p>
+                    <p className="text-yellow-400 text-xs tracking-widest uppercase">{t("projects.solarNav.competition")}</p>
+                    <p className="text-white text-sm font-bold mt-1">{t("projects.solarNav.reward")}</p>
+                    <p className="text-yellow-200/60 text-xs mt-0.5">{t("projects.solarNav.awardDescription")}</p>
                 </div>
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
