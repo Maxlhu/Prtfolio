@@ -91,10 +91,10 @@ const PROJECTS: Project[] = [
     },
     {
         title: "Obelisk",
-        description: "Recommendation system using a 2-Tower architecture for personalized results.",
+        description: "calendar to timesheet AI system using a 2-Tower architecture for personalized results.",
         imageUrl: obelisk_preview,
         projectUrl: "/project/obelisk",
-        techs: ["React", "NestJS", "Python", "PostgreSQL"],
+        techs: ["React", "NestJS", "Python", "PostgreSQL", "PyTorch"],
         context: "Work",
         categories: ["Web & Desktop", "ai"],
     },

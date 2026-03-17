@@ -260,7 +260,8 @@
             "section4": "My role in this project",
             "section4Text1": "I was the sole developer and designer on this project. I designed the visual identity and page structure, implemented every feature from the ROI calculator to the account system, integrated the meeting scheduler, set up the AWS infrastructure, and deployed the full application. This project gave me full-stack ownership of a live commercial product from day one.",
             "section5": "Check it out !",
-            "section5Text1": "--- To Fill Out ---"
+            "section5Text1": "You can see this website live at :",
+            "section5Text2": "You can find the code for this project here :"
         },
         "quizGame": {
             "title": "Quiz Game - Kahoot-like multiplayer platform",
@@ -280,6 +281,8 @@
             "section2Bullet1": "Administrators can build quizzes through a dedicated admin interface, generate questions automatically using AI. They can then build quizzes with multiple questions, point and timer for each.",
             "section2Bullet2": "Players join game sessions from the web, desktop, or mobile client and receive questions simultaneously over a WebSocket connection, with live scoring and a results screen at the end.",
             "section2Bullet3": "All clients share the same backend, meaning a quiz created on web can be played on mobile without any data duplication.",
+            "screen1Alt": "Player View",
+            "screen2Alt": "Leaderboard View",
             "section3": "How we built it",
             "section3Sub1": "Interface - Angular and Flutter",
             "section3Text1": "The desktop client is an Angular web application where quiz creators can manage their question banks, build new quizzes, and launch game sessions. The player can join from this webapp or from a Flutter mobile app we built for iOS and Android. Both clients connect to the same backend and share the same WebSocket protocol for real-time game interactions.",
@@ -297,7 +300,7 @@
             "section4Bullet4": "Security hardening : Audited and secured the full application against script injection and prompt injection at every input boundary.",
             "section4Bullet5": "Backend refactor : Migrated the entire server from plain Node.js to a structured NestJS architecture with modules, guards, pipes, and typed DTOs.",
             "section5": "Check it out !",
-            "section5Text1": "--- To Fill Out ---"
+            "section5Text1": "⚠️ To prevent cheating from the following years students, the code for this project cannot be shared publicly. If you want to know more about the technical details or see code snippets, feel free to reach out to me directly !"
         },
         "hexAI": {
             "title": "Hex AI Agent - Minimax game-playing agent",
@@ -387,7 +390,7 @@
             "section4Bullet1": "Algorithm design : Participated in the architectural brainstorm that produced the space-time graph formulation and the gravity-assist encoding strategy for the modified Dijkstra.",
             "section4Bullet2": "Unity visualization : Built the entire 3D journey viewer: solar system scene, orbital animations driven by NASA data, spacecraft path rendering, time-lapse preview, and the JSON interface to the Python backend.",
             "section5": "Check it out !",
-            "section5Text1": "--- To Fill Out ---"
+            "section5Text1": "You can find the full project on our DevPost and the code on Github :"
         },
         "escapeEngine": {
             "title": "Escape The Engine - 2D platformer with losing mechanics",

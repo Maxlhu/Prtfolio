@@ -1,7 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
+import quiz_game_home from "../../assets/quiz_game_home.png";
+import quiz_game_screen1 from "../../assets/quiz_game_screen1.png";
+import quiz_game_screen2 from "../../assets/quiz_game_screen2.png";
+import { SmallProjectCard } from "../../components/SmallProjectCard";
 
 // import quiz_preview from "../../assets/quiz_preview.png";
 const quiz_preview = "";
@@ -37,10 +41,7 @@ export function QuizGameProjectPage() {
                 {/* Bold diagonal color blocks */}
                 <div
                     className="absolute inset-0"
-                    style={{
-                        background:
-                            "radial-gradient(ellipse 70% 70% at 10% 20%, rgba(139,92,246,0.6) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 90% 80%, rgba(236,72,153,0.4) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 60% 10%, rgba(251,191,36,0.2) 0%, transparent 45%), #1e1b4b",
-                    }}
+                    style={{ backgroundImage: `url(${quiz_game_home})` }}
                 />
 
                 {/* Question mark pattern */}
@@ -94,6 +95,11 @@ export function QuizGameProjectPage() {
                     <BulletPoint text={t("projects.quizGame.section2Bullet3")} />
                 </ul>
 
+                <div className="flex items-center w-full justify-center flex-wrap gap-8 mt-8">
+                    <SmallProjectImage imageUrl={quiz_game_screen1} alt={t("projects.quizGame.screen1Alt")} />
+                    <SmallProjectImage imageUrl={quiz_game_screen2} alt={t("projects.quizGame.screen2Alt")} />
+                </div>
+
                 <SectionTitle title={t("projects.quizGame.section3")} />
 
                 <p className="text-violet-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
@@ -110,9 +116,7 @@ export function QuizGameProjectPage() {
                     {t("projects.quizGame.section3Sub3")}
                 </p>
                 <SectionText text={t("projects.quizGame.section3Text3")} />
-                <CodeBlock code={`// Prompt injection guard — strip adversarial injections before forwarding to OpenAI
-function sanitizeForLLM(input: string): string {
-  // Remove known injection patterns before sending to the model
+                <CodeBlock code={`function sanitizeForLLM(input: string): string {
   return input
     .replace(/ignore (all |previous |above )?instructions?/gi, "[removed]")
     .replace(/you are now|act as|pretend (you are|to be)/gi, "[removed]")

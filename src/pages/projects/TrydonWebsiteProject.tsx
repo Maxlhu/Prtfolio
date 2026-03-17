@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import trydon_home from "../../assets/trydon_home.png";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import trydon_web_screen1 from "../../assets/trydon_web_screen1.png";
+import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 
@@ -94,6 +95,7 @@ export function TrydonWebsiteProjectPage() {
                         <BulletPoint text={t("projects.trydonWebsite.section2Bullet4")} />
                         <BulletPoint text={t("projects.trydonWebsite.section2Bullet5")} />
                     </ul>
+                    <ProjectImage imageUrl={trydon_web_screen1} alt="ROI" />
 
                     <SectionTitle title={t("projects.trydonWebsite.section3")} />
 
@@ -122,6 +124,13 @@ export function TrydonWebsiteProjectPage() {
 
                     <SectionTitle title={t("projects.trydonWebsite.section5")} />
                     <SectionText text={t("projects.trydonWebsite.section5Text1")} />
+                    <a href="https://trydon.ca" target="_blank" className="text-emerald-400 hover:underline">
+                        Trydon.ca
+                    </a>
+                    <SectionText text={t("projects.trydonWebsite.section5Text2")} />
+                    <a href="https://github.com/Trydon-Inc/TrydonWebApp" target="_blank" className="text-emerald-400 hover:underline">
+                        Github
+                    </a>
                 </div>
             </div>
     );

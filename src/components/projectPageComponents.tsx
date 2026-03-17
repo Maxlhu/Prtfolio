@@ -26,7 +26,7 @@ export function ProjectImage({ imageUrl, alt }: { imageUrl: string; alt: string 
     return (
         <figure className="my-10 rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
             <img src={imageUrl} alt={alt} className="w-full h-auto object-cover" />
-            <figcaption className="text-sm text-gray-400 text-center py-3 bg-gray-50 font-mono">
+            <figcaption className="text-sm text-gray-400 text-center py-3 border-t border-gray-300 bg-gray-50 font-mono">
                 {alt}
             </figcaption>
         </figure>

@@ -62,7 +62,7 @@ export function ObeliskProjectPage() {
 
                     {/* Tech pills */}
                     <div className="flex flex-wrap gap-2 mt-6">
-                        {["React", "NestJS", "Python", "PostgreSQL", "ML · 2-Tower"].map((tag) => (
+                        {["React", "NestJS", "Python", "PostgreSQL", "ML · 2-Tower", "PyTorch"].map((tag) => (
                             <span
                                 key={tag}
                                 className="px-3 py-1 rounded-full border border-indigo-500/40 bg-indigo-950/40 text-indigo-300 font-mono text-xs tracking-wide"

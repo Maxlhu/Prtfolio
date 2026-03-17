@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
+import solar_nav_home from "../../assets/solar_nav_home.png";
 
 // import solar_preview from "../../assets/solar_preview.png";
 const solar_preview = "";
@@ -121,6 +122,7 @@ export function SolarSystemProjectPage() {
                     <BulletPoint text={t("projects.solarNav.section2Bullet3")} />
                     <BulletPoint text={t("projects.solarNav.section2Bullet4")} />
                 </ul>
+                <ProjectImage imageUrl={solar_nav_home} alt="Solar Navigation Home Screen" />
 
                 <SectionTitle title={t("projects.solarNav.section3")} />
 
@@ -128,25 +130,29 @@ export function SolarSystemProjectPage() {
                     {t("projects.solarNav.section3Sub1")}
                 </p>
                 <SectionText text={t("projects.solarNav.section3Text1")} />
-                <CodeBlock code={`# Gravity-assist aware pathfinding
-# Graph nodes  = planets at discretized time steps
-# Edge weight  = delta-v cost of transfer + gravity-assist reduction
-# Goal         = minimise total delta-v from origin to destination
-
-def build_spacetime_graph(planets, time_steps):
-    G = {}
-    for t in time_steps:
-        for p in planets:
-            pos = nasa_ephemeris(p, t)          # real-time NASA data
-            G[(p, t)] = neighbours(p, t, pos)   # reachable planets + cost
-    return G
-
-path = modified_dijkstra(G, start=(origin, t0), end=(destination, ...))`} />
 
                 <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
                     {t("projects.solarNav.section3Sub2")}
                 </p>
                 <SectionText text={t("projects.solarNav.section3Text2")} />
+                <CodeBlock code={`def getPlanetPosition(planet_name, date_time):
+    planet_ids = getPlanetIds()
+    planet_id = planet_ids[planet_name]  
+    planet_data = getPlanetData()
+
+    # Convert current datetime to Julian Date (JD)
+    jd_now = date_time.timestamp() / 86400 + 2440587.5 
+
+    # Query planetary position data from NASA JPL Horizons
+    obj = Horizons(id=planet_id, location='500@0', epochs=[jd_now], id_type='majorbody')
+    eph = obj.vectors()
+
+    # Convert AU (astronomical units) to meters
+    x = eph['x'][0] * 1.496e+11  
+    y = eph['y'][0] * 1.496e+11
+    z = eph['z'][0] * 1.496e+11  
+
+    return {"x": x, "y": y, "z": z, "gravity": planet_data[planet_name]["gravity"]} `} />
 
                 <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
                     {t("projects.solarNav.section3Sub3")}
@@ -163,6 +169,13 @@ path = modified_dijkstra(G, start=(origin, t0), end=(destination, ...))`} />
 
                 <SectionTitle title={t("projects.solarNav.section5")} />
                 <SectionText text={t("projects.solarNav.section5Text1")} />
+                <a href="https://github.com/Tibab222/polystar" target="_blank" className="text-emerald-400 hover:underline">
+                    Github
+                </a>
+                <br />
+                <a href="https://devpost.com/software/polystar" target="_blank" className="text-emerald-400 hover:underline">
+                    Devpost
+                </a>
             </div>
         </div>
     );
