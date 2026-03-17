@@ -5,12 +5,33 @@ import desjungles_screen1 from "../../assets/desjungles_screen1.png";
 import desjungles_screen2 from "../../assets/desjungles_screen2.png";
 import desjungles_screen3 from "../../assets/desjungles_screen3.png";
 import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
+import { useEffect, useState } from "react";
+import { HeaderDesktop } from "../../components/HeaderDesktop";
 
 export function DesjunglesProjectPage() {
 
     const { t } = useTranslation();
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > window.innerHeight * 0.1);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
         <div className="min-h-screen w-screen bg-black">
+            <div
+                className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out"
+                style={{
+                    opacity: scrolled ? 1 : 0,
+                    transform: scrolled ? "translateY(0)" : "translateY(-110%)",
+                    pointerEvents: scrolled ? "auto" : "none",
+                }}
+            >
+                <HeaderDesktop />
+            </div>
             {/* Hero */}
             <div
                 style={{ backgroundImage: `url(${desjungles_home})` }}

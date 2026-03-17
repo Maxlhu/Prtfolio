@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const lerp = (a, b, t) => a + (b - a) * t;
 
@@ -18,6 +19,7 @@ export default function ForestBg() {
   const [colorT, setColorT] = useState(0);
   const rafRef = useRef();
   const lastShiftRef = useRef(Date.now());
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const handleMove = (e) => {
@@ -62,58 +64,57 @@ export default function ForestBg() {
   const midColor    = `hsl(${ch - 10}, ${cs - 5}%, ${cl + 6}%)`;
   const edgeColor   = `hsl(${ch - 20}, ${cs - 15}%, ${cl - 2}%)`;
   const deepColor   = `hsl(${ch - 25}, ${cs - 20}%, ${cl - 6}%)`;
-
-  const gradient = `radial-gradient(ellipse 55% 55% at ${smooth.x}% ${smooth.y}%, 
-    ${centerColor} 0%, 
-    ${midColor} 30%, 
-    ${edgeColor} 65%, 
-    ${deepColor} 100%)`;
+  const textColor   = `hsl(${ch + 20}, 50%, 82%)`;
+  const dimColor    = `hsl(${ch + 20}, 30%, 35%)`;
 
   return (
     <div
+      className="relative w-full h-full flex items-center justify-center overflow-hidden cursor-none"
       style={{
-        width: "100%",
-        height: "100%",           /* fills the parent h-screen container */
-        position: "relative",     /* anchor for absolute children */
-        background: gradient,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        overflow: "hidden",
         fontFamily: "'Georgia', serif",
-        cursor: "none",
+        background: `radial-gradient(ellipse 55% 55% at ${smooth.x}% ${smooth.y}%, ${centerColor} 0%, ${midColor} 30%, ${edgeColor} 65%, ${deepColor} 100%)`,
       }}
     >
-      {/* Custom cursor — absolute, clipped to hero */}
+      {/* Language toggle — top right */}
+      <div className="absolute top-6 right-8 z-20 flex items-center gap-3 font-mono">
+        {["fr", "en"].map((lng, i) => (
+          <span key={lng} className="flex items-center gap-3">
+            <button
+              onClick={() => i18n.changeLanguage(lng)}
+              className="bg-transparent border-none cursor-pointer uppercase font-mono text-lg tracking-widest transition-all duration-300"
+              style={{
+                color: i18n.language === lng ? textColor : dimColor,
+                fontWeight: i18n.language === lng ? 600 : 400,
+              }}
+            >
+              {lng}
+            </button>
+            {i === 0 && (
+              <span className="text-lg" style={{ color: dimColor }}>·</span>
+            )}
+          </span>
+        ))}
+      </div>
+
+      {/* Custom cursor */}
       <div
+        className="absolute pointer-events-none z-10 w-2.5 h-2.5 rounded-full -translate-x-1/2 -translate-y-1/2"
         style={{
-          position: "absolute",   /* was fixed */
           left: `${smooth.x}%`,
           top: `${smooth.y}%`,
-          transform: "translate(-50%, -50%)",
-          width: 10,
-          height: 10,
-          borderRadius: "50%",
           background: `hsl(${ch}, 80%, 75%)`,
           boxShadow: `0 0 20px 6px hsl(${ch}, 70%, 55%, 0.35)`,
-          pointerEvents: "none",
-          zIndex: 10,
         }}
       />
 
-      {/* Vignette overlay — absolute, clipped to hero */}
+      {/* Vignette */}
       <div
-        style={{
-          position: "absolute",   /* was fixed */
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.45) 100%)",
-          pointerEvents: "none",
-        }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.45) 100%)" }}
       />
 
-      {/* Noise texture overlay */}
-      <svg style={{ position: "absolute", inset: 0, opacity: 0.06, pointerEvents: "none" }} width="100%" height="100%">
+      {/* Noise */}
+      <svg className="absolute inset-0 opacity-[0.06] pointer-events-none" width="100%" height="100%">
         <filter id="noise">
           <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch" />
           <feColorMatrix type="saturate" values="0" />
@@ -122,18 +123,14 @@ export default function ForestBg() {
       </svg>
 
       {/* Center content */}
-      <div
-        style={{
-          textAlign: "center",
-          color: `hsl(${ch + 20}, 50%, 82%)`,
-          zIndex: 1,
-          userSelect: "none",
-        }}
-      >
-        <div style={{ fontSize: "5rem", fontWeight: 300, letterSpacing: "-0.01em", lineHeight: 1.1, opacity: 0.18, textShadow: `0 2px 40px hsl(${ch}, 60%, 40%)`, marginBottom: "2rem" }}>
+      <div className="text-center z-10 select-none" style={{ color: textColor }}>
+        <div
+          className="text-8xl font-light leading-tight mb-8 opacity-[0.18]"
+          style={{ letterSpacing: "-0.01em", textShadow: `0 2px 40px hsl(${ch}, 60%, 40%)` }}
+        >
           Maxence Lhuisset
         </div>
-        <div style={{ fontSize: "1rem", letterSpacing: "0.35em", textTransform: "uppercase", opacity: 0.5, marginBottom: "1rem" }}>
+        <div className="text-base uppercase tracking-[0.35em] opacity-50">
           ↓ My Portfolio ↓
         </div>
       </div>

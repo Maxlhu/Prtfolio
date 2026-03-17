@@ -1,8 +1,8 @@
 {
     "nav": {
         "home": "Home",
-        "education": "Education",
-        "experience": "Experience",
+        "mainProjects": "Main Projects",
+        "allProjects": "All Projects",
         "projects": "Projects",
         "contact": "Contact"
     },

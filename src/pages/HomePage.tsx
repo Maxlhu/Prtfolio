@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
 import { SmallProjectCard } from "../components/SmallProjectCard";
 import { ProjectCategories } from "../components/ProjectCategories";
@@ -337,6 +337,17 @@ export function HomePage() {
     const [scrolled, setScrolled] = useState(false);
     const { t } = useTranslation();
     const [searchParams] = useSearchParams();
+    
+    const location = useLocation();
+
+    useEffect(() => {
+        const target = new URLSearchParams(location.search).get("scroll");
+        if (target) {
+        setTimeout(() => {
+            document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+        }
+    }, [location.search]);
 
     const target = searchParams.get("target");
     const featuredProjects = useFeaturedProjects(target);
@@ -374,7 +385,7 @@ export function HomePage() {
             </div>
 
             {/* ── Hero ───────────────────────────────────────────────────── */}
-            <div className="relative h-screen w-full overflow-hidden">
+            <div id="home" className="relative h-screen w-full overflow-hidden">
                 <ForestBg />
             </div>
 
@@ -399,7 +410,7 @@ export function HomePage() {
                 </div>
 
                 {/* ── Featured (dynamic) 4 projects ────────────────────── */}
-                <div id="projects" className="pt-2">
+                <div id="mainProjects" className="pt-2">
                     <div className="flex items-center gap-4 justify-center mb-8 mt-10">
                         <h1 className="text-4xl text-slate-200 font-bold text-center">{sectionLabel}</h1>
                         {/* Show a target badge when filtered */}
@@ -440,7 +451,9 @@ export function HomePage() {
                 <PortfolioSection />
 
                 {/* ── Contact ──────────────────────────────────────────── */}
-                <ContactSection />
+                <div id="contact">
+                    <ContactSection />
+                </div>
 
                 {/* ── Footer ───────────────────────────────────────────── */}
                 <div id="contact">

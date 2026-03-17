@@ -1,15 +1,35 @@
 import { useTranslation } from "react-i18next";
 import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { useEffect, useState } from "react";
+import { HeaderDesktop } from "../../components/HeaderDesktop";
 
 // import solar_preview from "../../assets/solar_preview.png";
 const solar_preview = "";
 
 export function SolarSystemProjectPage() {
     const { t } = useTranslation();
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > window.innerHeight * 0.1);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div className="min-h-screen w-screen bg-black">
-
+            <div
+                className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out"
+                style={{
+                    opacity: scrolled ? 1 : 0,
+                    transform: scrolled ? "translateY(0)" : "translateY(-110%)",
+                    pointerEvents: scrolled ? "auto" : "none",
+                }}
+            >
+                <HeaderDesktop />
+            </div>
             {/* ── Hero — deep space, star field, cosmic ── */}
             <div className="relative flex flex-col justify-end h-screen overflow-hidden bg-black">
 

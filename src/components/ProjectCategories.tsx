@@ -6,7 +6,7 @@ import obelisk_preview    from "../assets/obelisk_preview.png";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-type CategoryId = "software" | "hardware" | "ai" | "cybersecurity" | "videogame";
+type CategoryId = "Web & Desktop" | "hardware" | "ai" | "cybersecurity" | "videogame" | "mobile";
 
 type Project = {
     title: string;
@@ -28,28 +28,33 @@ type Category = {
 };
 
 const CATEGORY_META: Record<CategoryId, { index: string; label: string; summary: string }> = {
-    software: {
+    "Web & Desktop": {
         index: "01",
-        label: "Software",
+        label: "Web & Desktop",
         summary: "Web platforms, full-stack systems & developer tooling.",
     },
-    hardware: {
+    mobile: {
         index: "02",
+        label: "Mobile",
+        summary: "iOS, Android & cross-platform development.",
+    },
+    hardware: {
+        index: "03",
         label: "Hardware",
         summary: "Embedded systems, electronics & physical computing.",
     },
     ai: {
-        index: "03",
+        index: "04",
         label: "AI",
         summary: "Machine learning, intelligent agents & data pipelines.",
     },
     cybersecurity: {
-        index: "04",
+        index: "05",
         label: "Cybersecurity",
         summary: "Security automation, monitoring & cyber tooling.",
     },
     videogame: {
-        index: "05",
+        index: "06",
         label: "VideoGame",
         summary: "Game design, interactive experiences & real-time engines.",
     },
@@ -64,7 +69,7 @@ const PROJECTS: Project[] = [
         techs: ["React", "Python", "NLP", "Regex"],
         context: "Hackathon",
         reward: "1st - ConUHacks VI sponsor prize",
-        categories: ["software", "ai"],
+        categories: ["ai", "mobile"],
     },
     {
         title: "Trydon",
@@ -73,7 +78,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/trydon",
         techs: ["React", "Machine Learning", "Scoring"],
         context: "Entrepreneurship",
-        categories: ["software", "ai"],
+        categories: ["Web & Desktop", "ai", "mobile"],
     },
     {
         title: "Dia Jiro",
@@ -82,7 +87,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/diajiro",
         techs: ["Unity", "C#", "Audio Analysis"],
         context: "School",
-        categories: ["videogame", "software"],
+        categories: ["videogame"],
     },
     {
         title: "Obelisk",
@@ -91,7 +96,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/obelisk",
         techs: ["React", "NestJS", "Python", "PostgreSQL"],
         context: "Work",
-        categories: ["software", "ai"],
+        categories: ["Web & Desktop", "ai"],
     },
     {
         title: "Desjardins KPI",
@@ -100,7 +105,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/desjardins-kpi",
         techs: ["Python", "Automation", "Monitoring"],
         context: "Work",
-        categories: ["cybersecurity", "software"],
+        categories: ["cybersecurity"],
     },
     {
         title: "Hex AI",
@@ -109,7 +114,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/hex-ai",
         techs: ["Python", "Minimax", "Alpha-Beta"],
         context: "School",
-        categories: ["ai", "software", "videogame"],
+        categories: ["ai"],
     },
     {
         title: "Quiz Game",
@@ -118,7 +123,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/quiz-game",
         techs: ["Angular", "Flutter", "NestJS", "WebSocket", "OpenAI"],
         context: "Hackathon",
-        categories: ["software", "videogame", "ai"],
+        categories: ["Web & Desktop", "videogame", "ai"],
     },
     {
         title: "Trydon.ca",
@@ -127,7 +132,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/trydon-website",
         techs: ["Angular", "AWS Lambda", "React", "Auth"],
         context: "Entrepreneurship",
-        categories: ["software"],
+        categories: ["Web & Desktop"],
     },
     {
         title: "Escape The Engine",
@@ -136,7 +141,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/escape-the-engine",
         techs: ["Unity", "C#", "2D Physics"],
         context: "Personal",
-        categories: ["videogame", "software"],
+        categories: ["videogame"],
     },
     {
         title: "Homunculus",
@@ -145,7 +150,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/homunculus",
         techs: ["Rust", "Tauri", "React", "Serial"],
         context: "School",
-        categories: ["hardware", "software"],
+        categories: ["hardware", "Web & Desktop"],
     },
     {
         title: "Solar Navigation",
@@ -155,7 +160,7 @@ const PROJECTS: Project[] = [
         techs: ["Python", "React", "NASA API", "Orbital Mechanics"],
         context: "Hackathon",
         reward: "2nd - PolyHX 2024",
-        categories: ["software", "ai"],
+        categories: ["Web & Desktop", "videogame"],
     },
     {
         title: "GameNight",
@@ -164,7 +169,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/game-night",
         techs: ["React Native", "NestJS", "Expo", "WebSocket"],
         context: "Startup",
-        categories: ["software", "videogame"],
+        categories: ["mobile"],
     },
     {
         title: "HiFi Multiroom",
@@ -173,7 +178,7 @@ const PROJECTS: Project[] = [
         projectUrl: "/project/hifi",
         techs: ["Snapcast", "Raspberry Pi", "Linux", "React"],
         context: "Personal",
-        categories: ["hardware", "software"],
+        categories: ["hardware", "Web & Desktop"],
     },
 ];
 

@@ -1,30 +1,69 @@
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function HeaderDesktop() {
     const { t, i18n } = useTranslation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const changeLanguage = (lng: string) => {
-        i18n.changeLanguage(lng);
+    const changeLanguage = (lng: string) => i18n.changeLanguage(lng);
+
+    const handleNavClick = (id: string) => {
+        if (location.pathname === "/") {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            navigate(`/?scroll=${id}`);
+        }
     };
 
+    const navItems = [
+        { id: "home", label: t("nav.home") },
+        { id: "mainProjects", label: t("nav.mainProjects") },
+        { id: "allProjects", label: t("nav.allProjects") },
+        { id: "contact", label: t("nav.contact") },
+    ];
+
     return (
-        <div className="relative w-full h-16 flex items-center justify-between px-4 bg-zinc-800 border-b border-gray-700">
-            
-            <div className="text-xl font-bold text-zinc-200">Maxence Lhuisset</div>
+        <div className="w-full h-20 flex items-center justify-between px-8 bg-black/60 backdrop-blur-md border-b border-white/5">
 
-            <div className="absolute left-1/2 -translate-x-1/2 flex gap-4">
-                <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="text-white hover:font-semibold bg-transparent border-none cursor-pointer">{t("nav.home")}</button>
-                <button onClick={() => document.getElementById("education")?.scrollIntoView({ behavior: "smooth" })} className="text-white hover:font-semibold bg-transparent border-none cursor-pointer">{t("nav.education")}</button>
-                <button onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })} className="text-white hover:font-semibold bg-transparent border-none cursor-pointer">{t("nav.experience")}</button>
-                <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} className="text-white hover:font-semibold bg-transparent border-none cursor-pointer">{t("nav.projects")}</button>
-                <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="text-white hover:font-semibold bg-transparent border-none cursor-pointer">{t("nav.contact")}</button>
+            {/* Name */}
+            <span className="font-mono text-sm tracking-widest text-zinc-400 uppercase">
+                Maxence<span className="text-white text-lg ml-1">Lhuisset</span>
+            </span>
+
+            {/* Nav */}
+            <div className="flex items-center gap-8">
+                {navItems.map(({ id, label }) => (
+                    <button
+                        key={id}
+                        onClick={() => handleNavClick(id)}
+                        className="relative group font-mono text-md tracking-widest uppercase text-zinc-400 hover:text-white transition-colors duration-200 bg-transparent border-none cursor-pointer"
+                    >
+                        {label}
+                        {/* animated underline */}
+                        <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-white group-hover:w-full transition-all duration-300" />
+                    </button>
+                ))}
             </div>
 
-            <div className="flex gap-2">
-                <button onClick={() => changeLanguage("fr")}>FR</button>
-                <button onClick={() => changeLanguage("en")}>EN</button>
+            {/* Language switcher */}
+            <div className="flex items-center gap-1 font-mono text-md tracking-widest">
+                {["fr", "en"].map((lng, i) => (
+                    <span key={lng} className="flex items-center gap-1">
+                        <button
+                            onClick={() => changeLanguage(lng)}
+                            className={`uppercase transition-colors duration-200 border-none bg-transparent cursor-pointer ${
+                                i18n.language === lng
+                                    ? "text-white"
+                                    : "text-zinc-600 hover:text-zinc-300"
+                            }`}
+                        >
+                            {lng}
+                        </button>
+                        {i === 0 && <span className="text-zinc-700">·</span>}
+                    </span>
+                ))}
             </div>
-
         </div>
-    )
+    );
 }
