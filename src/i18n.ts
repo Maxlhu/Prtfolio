@@ -14,7 +14,7 @@ i18n
       escapeValue: false, // react already safes from xss
     },
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/Prtfolio/locales/{{lng}}/{{ns}}.json",
     },
   });
 export default i18n;
