@@ -65,7 +65,7 @@ const PROJECTS: Project[] = [
         title: "Desjungles",
         description: "AI-powered banking app for money transfers using natural-language commands.",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/desjungles",
+        projectUrl: "/project/desjungles",
         techs: ["React", "Python", "NLP", "Regex"],
         context: "Hackathon",
         reward: "1st - ConUHacks VI sponsor prize",

@@ -66,7 +66,7 @@ const ALL_PROJECTS: Project[] = [
         title: "projects.desjungles.title",
         description: "projects.desjungles.description",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/desjungles",
+        projectUrl: "/project/desjungles",
         technologies: [
             "projects.desjungles.techno1",
             "projects.desjungles.techno2",
@@ -229,7 +229,7 @@ const ALL_PROJECTS: Project[] = [
         title: "projects.polygames.title",
         description: "projects.polygames.description",
         imageUrl: dia_jiro_preview,
-        projectUrl: "/Prtfolio/project/diajiro",
+        projectUrl: "/project/diajiro",
         technologies: ["projects.polygames.techno1", "projects.polygames.techno2"],
         context: "projects.polygames.context",
         reward: "projects.polygames.reward",
@@ -242,7 +242,7 @@ const ALL_PROJECTS: Project[] = [
         title: "projects.trydonAlgo.title",
         description: "projects.trydonAlgo.description",
         imageUrl: trydon_preview,
-        projectUrl: "/Prtfolio/project/trydon",
+        projectUrl: "/project/trydon",
         technologies: [
             "projects.trydonAlgo.techno1",
             "projects.trydonAlgo.techno2",
@@ -261,7 +261,7 @@ const ALL_PROJECTS: Project[] = [
         title: "projects.obelisk.title",
         description: "projects.obelisk.description",
         imageUrl: obelisk_preview,
-        projectUrl: "/Prtfolio/project/obelisk",
+        projectUrl: "/project/obelisk",
         technologies: [
             "projects.obelisk.techno1",
             "projects.obelisk.techno2",
