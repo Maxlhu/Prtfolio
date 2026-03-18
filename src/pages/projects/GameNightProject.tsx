@@ -11,6 +11,10 @@ export function GameNightProjectPage() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > window.innerHeight * 0.1);
         };

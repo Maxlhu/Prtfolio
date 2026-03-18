@@ -10,6 +10,9 @@ const obelisk_preview = ""; // placeholder
 export function ObeliskProjectPage() {
     const { t } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {

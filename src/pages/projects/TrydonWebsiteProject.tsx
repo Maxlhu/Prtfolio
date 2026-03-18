@@ -11,6 +11,9 @@ const trydon_preview = "";
 export function TrydonWebsiteProjectPage() {
     const { t } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {

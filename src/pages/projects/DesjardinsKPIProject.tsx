@@ -7,6 +7,9 @@ export function DesjardinsKPIProjectPage() {
 
     const [scrolled, setScrolled] = useState(false);
     const { t } = useTranslation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {

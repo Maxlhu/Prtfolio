@@ -18,6 +18,9 @@ export function EscapeTheEngineProjectPage() {
     ];
 
     const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
