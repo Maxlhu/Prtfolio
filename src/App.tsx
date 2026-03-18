@@ -18,7 +18,7 @@ import { HifiProjectPage } from "./pages/projects/HifiProject";
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter basename="/Prtfolio/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/project/desjungles" element={<DesjunglesProjectPage />} />
