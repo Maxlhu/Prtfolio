@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 // import { ProjectPage } from "./pages/ProjectPage";
 import { DesjunglesProjectPage } from "./pages/projects/DesjunglesProject";
@@ -18,24 +18,24 @@ import { HifiProjectPage } from "./pages/projects/HifiProject";
 
 function App() {
   return (
-    <BrowserRouter basename="/Prtfolio/">
+    <HashRouter>
       <Routes>
-        <Route path="/Prtfolio/" element={<HomePage />} />
-        <Route path="/Prtfolio/project/desjungles" element={<DesjunglesProjectPage />} />
-        <Route path="/Prtfolio/project/trydon" element={<TrydonProjectPage />} />
-        <Route path="/Prtfolio/project/diajiro" element={<DiaJiroProjectPage />} />
-        <Route path="/Prtfolio/project/obelisk" element={<ObeliskProjectPage />} />
-        <Route path="/Prtfolio/project/desjardins-kpi" element={<DesjardinsKPIProjectPage />} />
-        <Route path="/Prtfolio/project/hex-ai" element={<HexAIProjectPage />} />
-        <Route path="/Prtfolio/project/quiz-game" element={<QuizGameProjectPage />} />
-        <Route path="/Prtfolio/project/trydon-website" element={<TrydonWebsiteProjectPage />} />
-        <Route path="/Prtfolio/project/escape-the-engine" element={<EscapeTheEngineProjectPage />} />
-        <Route path="/Prtfolio/project/homunculus" element={<HomunculusProjectPage />} />
-        <Route path="/Prtfolio/project/solar-system" element={<SolarSystemProjectPage />} />
-        <Route path="/Prtfolio/project/game-night" element={<GameNightProjectPage />} />
-        <Route path="/Prtfolio/project/hifi" element={<HifiProjectPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project/desjungles" element={<DesjunglesProjectPage />} />
+        <Route path="/project/trydon" element={<TrydonProjectPage />} />
+        <Route path="/project/diajiro" element={<DiaJiroProjectPage />} />
+        <Route path="/project/obelisk" element={<ObeliskProjectPage />} />
+        <Route path="/project/desjardins-kpi" element={<DesjardinsKPIProjectPage />} />
+        <Route path="/project/hex-ai" element={<HexAIProjectPage />} />
+        <Route path="/project/quiz-game" element={<QuizGameProjectPage />} />
+        <Route path="/project/trydon-website" element={<TrydonWebsiteProjectPage />} />
+        <Route path="/project/escape-the-engine" element={<EscapeTheEngineProjectPage />} />
+        <Route path="/project/homunculus" element={<HomunculusProjectPage />} />
+        <Route path="/project/solar-system" element={<SolarSystemProjectPage />} />
+        <Route path="/project/game-night" element={<GameNightProjectPage />} />
+        <Route path="/project/hifi" element={<HifiProjectPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
