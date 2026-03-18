@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import desjungles_preview from "../assets/desjungles_preview.png";
 import dia_jiro_preview   from "../assets/dia_jiro_preview.png";
 import trydon_preview     from "../assets/trydon_preview.png";
@@ -75,7 +76,7 @@ const PROJECTS: Project[] = [
         title: "Trydon",
         description: "AI size recommendation engine that predicts garment fit from body measurements.",
         imageUrl: trydon_preview,
-        projectUrl: "/Prtfolio/project/trydon",
+        projectUrl: "/project/trydon",
         techs: ["React", "Machine Learning", "Scoring"],
         context: "Entrepreneurship",
         categories: ["Web & Desktop", "ai", "mobile"],
@@ -84,7 +85,7 @@ const PROJECTS: Project[] = [
         title: "Dia Jiro",
         description: "Voice-controlled cave exploration game where sound frequency activates crystals.",
         imageUrl: dia_jiro_preview,
-        projectUrl: "/Prtfolio/project/diajiro",
+        projectUrl: "/project/diajiro",
         techs: ["Unity", "C#", "Audio Analysis"],
         context: "School",
         categories: ["videogame"],
@@ -93,7 +94,7 @@ const PROJECTS: Project[] = [
         title: "Obelisk",
         description: "calendar to timesheet AI system using a 2-Tower architecture for personalized results.",
         imageUrl: obelisk_preview,
-        projectUrl: "/Prtfolio/project/obelisk",
+        projectUrl: "/project/obelisk",
         techs: ["React", "NestJS", "Python", "PostgreSQL", "PyTorch"],
         context: "Work",
         categories: ["Web & Desktop", "ai"],
@@ -102,7 +103,7 @@ const PROJECTS: Project[] = [
         title: "Desjardins KPI",
         description: "Cybersecurity KPI automation platform for enterprise perimeter monitoring.",
         imageUrl: obelisk_preview,
-        projectUrl: "/Prtfolio/project/desjardins-kpi",
+        projectUrl: "/project/desjardins-kpi",
         techs: ["Python", "Automation", "Monitoring"],
         context: "Work",
         categories: ["cybersecurity"],
@@ -111,7 +112,7 @@ const PROJECTS: Project[] = [
         title: "Hex AI",
         description: "Hex game AI agent built with minimax and alpha-beta pruning.",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/hex-ai",
+        projectUrl: "/project/hex-ai",
         techs: ["Python", "Minimax", "Alpha-Beta"],
         context: "School",
         categories: ["ai"],
@@ -120,7 +121,7 @@ const PROJECTS: Project[] = [
         title: "Quiz Game",
         description: "Real-time multiplayer quiz with WebSockets and AI-generated questions.",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/quiz-game",
+        projectUrl: "/project/quiz-game",
         techs: ["Angular", "Flutter", "NestJS", "WebSocket", "OpenAI"],
         context: "Hackathon",
         categories: ["Web & Desktop", "videogame", "ai"],
@@ -129,7 +130,7 @@ const PROJECTS: Project[] = [
         title: "Trydon.ca",
         description: "Startup website with ROI calculator, pricing flow and authentication.",
         imageUrl: trydon_preview,
-        projectUrl: "/Prtfolio/project/trydon-website",
+        projectUrl: "/project/trydon-website",
         techs: ["Angular", "AWS Lambda", "React", "Auth"],
         context: "Entrepreneurship",
         categories: ["Web & Desktop"],
@@ -138,7 +139,7 @@ const PROJECTS: Project[] = [
         title: "Escape The Engine",
         description: "2D platformer where one player mechanic is removed at each new level.",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/escape-the-engine",
+        projectUrl: "/project/escape-the-engine",
         techs: ["Unity", "C#", "2D Physics"],
         context: "Personal",
         categories: ["videogame"],
@@ -147,7 +148,7 @@ const PROJECTS: Project[] = [
         title: "Homunculus",
         description: "Neuroscience MEA software with real-time acquisition and signal processing.",
         imageUrl: obelisk_preview,
-        projectUrl: "/Prtfolio/project/homunculus",
+        projectUrl: "/project/homunculus",
         techs: ["Rust", "Tauri", "React", "Serial"],
         context: "School",
         categories: ["hardware", "Web & Desktop"],
@@ -156,7 +157,7 @@ const PROJECTS: Project[] = [
         title: "Solar Navigation",
         description: "Space trajectory planner using gravity assists and NASA data.",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/solar-system",
+        projectUrl: "/project/solar-system",
         techs: ["Python", "React", "NASA API", "Orbital Mechanics"],
         context: "Hackathon",
         reward: "2nd - PolyHX 2024",
@@ -166,7 +167,7 @@ const PROJECTS: Project[] = [
         title: "GameNight",
         description: "In-progress mobile party game with timers, dice and multiplayer sessions.",
         imageUrl: desjungles_preview,
-        projectUrl: "/Prtfolio/project/game-night",
+        projectUrl: "/project/game-night",
         techs: ["React Native", "NestJS", "Expo", "WebSocket"],
         context: "Startup",
         categories: ["mobile"],
@@ -175,7 +176,7 @@ const PROJECTS: Project[] = [
         title: "HiFi Multiroom",
         description: "Raspberry Pi multiroom audio system with synchronized network playback.",
         imageUrl: obelisk_preview,
-        projectUrl: "/Prtfolio/project/hifi",
+        projectUrl: "/project/hifi",
         techs: ["Snapcast", "Raspberry Pi", "Linux", "React"],
         context: "Personal",
         categories: ["hardware", "Web & Desktop"],
@@ -191,10 +192,11 @@ const CATEGORIES: Category[] = (Object.keys(CATEGORY_META) as CategoryId[]).map(
 // ─── Inner project card ───────────────────────────────────────────────────────
 
 function ProjectCard({ project }: { project: Project }) {
+    const navigate = useNavigate();
     return (
         <button className="group flex flex-col justify-between border border-white/10 rounded-sm p-5 gap-4
                         transition-all duration-300 hover:border-white/30 hover:bg-white/3"
-                        onClick={() => window.open(project.projectUrl || "#", "_blank")}>
+                        onClick={() => project.projectUrl && navigate(project.projectUrl)}>
             <div className="flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-2">
                     <h3 className="font-mono text-sm font-semibold text-white leading-snug">
