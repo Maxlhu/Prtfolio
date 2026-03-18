@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { BulletPoint, CodeBlock, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
-import { HeaderDesktop } from "../../components/HeaderDesktop"
+import { HeaderDesktop } from "../../components/HeaderDesktop";
+import hex_home from "../../assets/hex_home.png";
 
 export function HexAIProjectPage() {
     const { t } = useTranslation();
@@ -28,28 +29,8 @@ export function HexAIProjectPage() {
                 <HeaderDesktop />
             </div>
             {/* ── Hero — geometric / algorithmic ── */}
-            <div className="relative flex flex-col justify-end h-screen overflow-hidden bg-black">
+            <div className="relative flex flex-col justify-end h-screen overflow-hidden bg-black" style={{ backgroundImage: `url(${hex_home})` }}>
 
-                {/* Hex grid SVG background */}
-                <svg
-                    className="absolute inset-0 w-full h-full opacity-15"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ pointerEvents: "none" }}
-                >
-                    <defs>
-                        <pattern id="hexPattern" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
-                            <polygon
-                                points="30,2 58,17 58,47 30,62 2,47 2,17"
-                                fill="none"
-                                stroke="rgba(251,146,60,0.6)"
-                                strokeWidth="1"
-                            />
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#hexPattern)" />
-                </svg>
-
-                {/* Glow center */}
                 <div
                     className="absolute inset-0"
                     style={{
@@ -115,15 +96,24 @@ export function HexAIProjectPage() {
                 <SectionText text={t("projects.hexAI.section3Text2")} />
                 <SectionText text={t("projects.hexAI.section3Text3")} />
 
-                <CodeBlock code={`def heuristic(board, player) -> float:
-    """
-    Combined score = directional_length + blockade_bonus
-    directional_length: shortest virtual-connection path length
-    blockade_bonus:     penalty for opponent cells on critical bridges
-    """
-    dl  = directional_length(board, player)
-    blk = blockade_score(board, opponent(player))
-    return dl - BLOCKADE_WEIGHT * blk`} />
+                <CodeBlock code={`def extract_chain_from_position(self, rep, start_i, start_j, piece_type: str) -> list:
+        chain = []
+        stack = [(start_i, start_j)]
+        visited = set()
+
+        while stack:
+            i, j = stack.pop()
+            if (i, j) in visited:
+                continue
+            
+            visited.add((i, j))
+            chain.append((i, j))
+
+            for _, (ptype, (ni, nj)) in rep.get_neighbours(i, j).items():
+                if ptype == piece_type and (ni, nj) not in visited:
+                    stack.append((ni, nj))
+
+        return chain`} />
 
                 <p className="text-orange-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
                     {t("projects.hexAI.section3Sub3")}

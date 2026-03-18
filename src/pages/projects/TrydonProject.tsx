@@ -109,13 +109,49 @@ export function TrydonProjectPage() {
                 </div>
                 
                 <SectionTitle title={t("projects.trydon.section4")} />
+                <p className="text-purple-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.trydon.section4Sub1")}
+                </p>
                 <SectionText text={t("projects.trydon.section4Text1")} />
-
+                <p className="text-purple-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.trydon.section4Sub2")}
+                </p>
+                <SectionText text={t("projects.trydon.section4Text2")} />
+                <p className="text-purple-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.trydon.section4Sub3")}
+                </p>
+                <SectionText text={t("projects.trydon.section4Text3")} />
+                <p className="text-purple-400 font-mono text-sm tracking-widest uppercase mt-8 mb-2">
+                    {t("projects.trydon.section4Sub4")}
+                </p>
+                <SectionText text={t("projects.trydon.section4Text4")} />
                 <SectionTitle title={t("projects.trydon.section5")} />
                 <SectionText text={t("projects.trydon.section5Text1")} />
+                <ul className="mt-2">
+                    <BulletPoint text={t("projects.trydon.section5Bullet1")} />
+                    <BulletPoint text={t("projects.trydon.section5Bullet2")} />
+                    <BulletPoint text={t("projects.trydon.section5Bullet3")} />
+                    <BulletPoint text={t("projects.trydon.section5Bullet4")} />
+                </ul>
 
                 <SectionTitle title={t("projects.trydon.section6")} />
                 <SectionText text={t("projects.trydon.section6Text1")} />
+                <SectionText text={t("projects.trydon.section6Text2")} />
+                <a href="https://trydon.ca" target="_blank" className="text-emerald-400 hover:underline">
+                    Trydon.ca
+                </a>
+                <br />
+                <a href="https://apps.shopify.com/trydon" target="_blank" className="text-emerald-400 hover:underline">
+                    Shopify App
+                </a>
+                <br />
+                <a href="https://github.com/Trydon-Inc/TrydonWebApp" target="_blank" className="text-emerald-400 hover:underline">
+                    Backend Github
+                </a>
+                <br />
+                <a href="https://github.com/Trydon-Inc/Trydon-app" target="_blank" className="text-emerald-400 hover:underline">
+                    Mobile Github
+                </a>
 
             </div>
         </div>

@@ -39,7 +39,7 @@
             "duration": "2022 - 2026",
             "school": "Polytechnic School of Montreal",
             "degree": "Bachelor's Degree in Software Engineering",
-            "text": "Final-year software engineering student focused on building reliable software systems and applying strong technical foundations in programming, system design, and teamwork."
+            "text": "Junior Software engineer focused on building reliable software systems and applying strong technical foundations in programming, system design, and teamwork."
         },
         "hec": {
             "duration": "2025",
@@ -128,13 +128,28 @@
             "section3Text4": "The final result is presented as a simple size recommendation along with a visual explanation of how the garment will fit.",
 
             "section4": "What we used",
-            "section4Text1": "--- To Fill Out ---",
+            "section4Sub1": "Body measurements",
+            "section4Text1": "We modified the BodyPix model from Google to perform body segmentation and extract precise body measurements from user video feeds. The model was added to our React frontend using TensorFlow.",
+            "section4Sub2": "Backend & Database",
+            "section4Text2": "Our whole system uses NestJS as a central backend that handles user accounts, measurement data, garment data, and fit calculations. We use MongoDB to store user profiles and measurement history securely.",
+            "section4Sub3": "Web plugin & Shopify app",
+            "section4Text3": "To integrate Trydon to any e-commerce website, we built a web plugin that can be injected on product pages to display fit recommendations. We also developed a Shopify app that connects to our backend and allows merchants to easily add Trydon's functionality to their product pages and manage their inventory from Shopify merchant interface.",
+            "section4Sub4": "Mobile App",
+            "section4Text4": "We developped a mobile app using React Native that allows users to create their profile, get measured using the body segmentation AI, and manage their measurements and preferences on the go.",
+
 
             "section5": "My role in this project",
-            "section5Text1": "--- To Fill Out ---",
+            "section5Text1": "As Co-founder of Trydon i work on all the technology involved in the product. ",
+            "section5Bullet1": "I designed and implemented the fit scoring algorithm that determines how garments will fit based on body and garment measurements.",
+            "section5Bullet2": "I helped set up and maintain the NestJS backend and MongoDB database that power the whole system.",
+            "section5Bullet3": "I was product owner and team leader for the development of Trydon Shopify plugin.",
+            "section5Bullet4": "I helped developping the mobile app and was responsible for building and publishing it to Apple Store and Google Play Store.",
 
-            "section6": "Future vision",
-            "section6Text1": "--- To Fill Out ---"
+
+            "section6": "Check it out !",
+            "section6Text1": "Unfortunately, Trydon closed in march 2026, the app is no longer available on app stores and shopify store.",
+            "section6Text2": "You can learn more about Trydon on our website, or check the code we published open-source here :"
+
         },
         "diajiro": {
             "title": "Dia Jiro - Sound controlled cave exploration game",
@@ -331,7 +346,7 @@
             "section4": "My role in this project",
             "section4Text1": "This was a solo project as part of my AI coursework. I designed the full agent, built the minimax engine with alpha-beta pruning and move ordering, designed both heuristic components, and tuned the weighting parameters through playtesting against other agents.",
             "section5": "Check it out !",
-            "section5Text1": "--- To Fill Out ---"
+            "section5Text1": "⚠️ To prevent cheating from the following years students, the code for this project cannot be shared publicly. If you want to know more about the technical details or see code snippets, feel free to reach out to me directly !"
         },
         "desjardinsKPI": {
             "title": "Perimeter KPI Generator - Cybersecurity internal tool",
@@ -361,8 +376,10 @@
         "solarNav": {
             "title": "Solar Navigation - Interplanetary route planner",
             "description": "A real-time solar system navigation system that uses NASA ephemeris data to compute fuel-optimal interplanetary trajectories, leveraging gravity assists as slingshot maneuvers. Features a React dashboard and a live Unity 3D journey visualizer.",
-            "context": "PolyHX 2024 - Space Challenge",
+            "context": "PolyHX 2025 - Space Challenge",
+            "competition": "PolyHX 2025",
             "reward": "🥈 Second Place",
+            "awardDescription": "Space Challenge",
             "techno1": "Python",
             "techno2": "React",
             "techno3": "Unity",
@@ -575,7 +592,7 @@
     },
     "home": {
         "summary": {
-            "part1": "Final-year Software Engineering student at Polytechnique Montréal.",
+            "part1": "Junior software Engineer, graduated from Polytechnique Montréal.",
             "part2": "Passionate about building impactful software with experience in web, cybersecurity, video games, and robotics.",
             "part3": "Proven leadership as a co-founder, project manager, and university team president.",
             "part4": "Seeking a software engineering graduate job in Big Tech with strong skills in programming, system design, and teamwork."
