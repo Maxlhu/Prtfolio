@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 import solar_nav_home from "../../assets/solar_nav_home.png";

@@ -1,10 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 import { useEffect, useState } from "react";
-
-// import kpi_preview from "../../assets/kpi_preview.png";
-const kpi_preview = "";
 
 export function DesjardinsKPIProjectPage() {
 

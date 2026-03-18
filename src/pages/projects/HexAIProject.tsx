@@ -1,10 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
-import { HeaderDesktop } from "../../components/HeaderDesktop";
-
-// import hex_preview from "../../assets/hex_preview.png";
-const hex_preview = "";
+import { HeaderDesktop } from "../../components/HeaderDesktop"
 
 export function HexAIProjectPage() {
     const { t } = useTranslation();

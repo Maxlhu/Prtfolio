@@ -3,10 +3,9 @@ import { useTranslation } from "react-i18next";
 import {
     BulletPoint,
     CodeBlock,
-    MediumProjectImage,
     SectionText,
     SectionTitle,
-} from "../../components/ProjectPageComponents";
+} from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 

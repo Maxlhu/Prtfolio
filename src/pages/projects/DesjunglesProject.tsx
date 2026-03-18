@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
-import desjungles_preview from "../../assets/desjungles_preview.png";
 import desjungles_home from "../../assets/desjungles_home.png";
 import desjungles_screen1 from "../../assets/desjungles_screen1.png";
 import desjungles_screen2 from "../../assets/desjungles_screen2.png";
 import desjungles_screen3 from "../../assets/desjungles_screen3.png";
-import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 

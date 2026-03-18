@@ -3,7 +3,7 @@ import trydon_hero from "../../assets/trydon_hero.png";
 import trydon_screen1 from "../../assets/trydon_screen1.png"
 import trydon_screen2 from "../../assets/trydon_screen2.png"
 import trydon_screen3 from "../../assets/trydon_screen3.png"
-import { BulletPoint, CodeBlock, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, ProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 

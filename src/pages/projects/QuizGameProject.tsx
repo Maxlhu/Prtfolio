@@ -1,11 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle, SmallProjectImage } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 import quiz_game_home from "../../assets/quiz_game_home.png";
 import quiz_game_screen1 from "../../assets/quiz_game_screen1.png";
 import quiz_game_screen2 from "../../assets/quiz_game_screen2.png";
-import { SmallProjectCard } from "../../components/SmallProjectCard";
 
 // import quiz_preview from "../../assets/quiz_preview.png";
 const quiz_preview = "";

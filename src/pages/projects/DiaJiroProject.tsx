@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import diajiro_preview from "../../assets/dia_jiro_preview.png";
 import diajiro_screen1 from "../../assets/dia_jiro_screen1.png";
-import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, ProjectImage, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 
