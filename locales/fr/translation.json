@@ -1,0 +1,78 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "education": "Formation",
+        "experience": "Experience",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "sections": {
+        "about": "A propos",
+        "education": "Formation",
+        "experience": "Experience",
+        "bigProjects": "Mes principaux projets"
+    },
+    "education": {
+        "polytechnic": {
+            "duration": "2022 - 2026",
+            "school": "École Polytechnique de Montréal",
+            "degree": "Baccalauréat en genie logiciel",
+            "text": "Etudiant en derniere annee de genie logiciel, avec un focus sur la conception de systemes fiables et l'application de bases solides en programmation, architecture et travail d'equipe."
+        },
+        "hec": {
+            "duration": "2025",
+            "school": "HEC Montreal",
+            "degree": "Certificat en entrepreneuriat et commercialisation (6 mois)",
+            "text": "Formation orientee entrepreneuriat pour renforcer la strategie produit, la commercialisation et la prise de decision business dans des projets technologiques."
+        }
+    },
+    "experience": {
+        "desjardins": {
+            "title": "Stagiaire en cybersécurité",
+            "company": "Banque Desjardins, Montreal",
+            "duration": "Mai 2025 - Aout 2025",
+            "text": "Participation a la surveillance du perimetre externe pour l'une des plus grandes banques du Quebec, sur plus de 7K actifs web. Collaboration avec les equipes SOC et utilisation d'outils SIEM et de protection API, avec une progression en gestion des risques, veille de menace et conformite."
+        },
+        "trydon": {
+            "title": "Co-fondateur & CEO",
+            "company": "Trydon",
+            "duration": "Avr 2024 - Present",
+            "text": "Conception d'une solution d'essayage virtuel et de reduction des retours via analytics web et IA de reconnaissance corporelle, atteignant environ 90% de precision de mesure. Direction d'une equipe pluridisciplinaire pour livrer des experiences web, mobile et Shopify."
+        },
+        "polystar": {
+            "title": "President",
+            "company": "Association Robotique (PolySTAR), Polytechnique Montreal",
+            "duration": "Mai 2024 - Present",
+            "text": "Coordination de projets robotiques et de la logistique organisationnelle pour une communaute de plus de 50 membres. Pilotage d'equipes en conception, developpement et strategie de competition."
+        }
+    },
+    "projects": {
+        "conuhacks": {
+            "title": "ConuHacks - Gagnant du Defi Desjardins (Jan 2026)",
+            "description": "Developpement d'une solution multiplateforme avec iOS, Android, TensorFlow et Expo; premier prix du defi Desjardins."
+        },
+        "polygames": {
+            "title": "PolyGames Hackathon - Gagnant du Defi Technique (Oct 2025)",
+            "description": "Creation et presentation d'un prototype Unity (C#) en temps limite, avec victoire dans la categorie defi technique."
+        },
+        "quizgame": {
+            "title": "Jeu Quiz Multiplateforme (Jan 2025 - Mai 2025)",
+            "description": "Realisation d'un jeu quiz multiplateforme avec Angular, NestJS et Flutter, de la conception a l'integration complete."
+        },
+        "portfolioopt": {
+            "title": "Hackathon d'Optimisation de Portefeuille (Oct 2023)",
+            "description": "Utilisation de Python et scikit-learn pour modeliser des scenarios d'allocation et optimiser les decisions de strategie d'investissement."
+        }
+    },
+    "home": {
+        "summary": {
+            "part1": "Etudiant en derniere annee de genie logiciel a Polytechnique Montreal.",
+            "part2": "Passionne par la creation de logiciels a impact avec de l'experience en web, cybersécurité, jeux video et robotique.",
+            "part3": "Leadership demontre comme co-fondateur, gestionnaire de projet et president d'equipe universitaire.",
+            "part4": "A la recherche d'un poste junior en genie logiciel avec des competences solides en programmation, architecture systeme et travail d'equipe."
+        }
+    },
+    "footer": {
+        "copyright": "© 2026 Maxence Lhuisset. Tous droits reserves."
+    }
+}
