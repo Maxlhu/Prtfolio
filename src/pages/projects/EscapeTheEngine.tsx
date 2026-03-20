@@ -162,6 +162,9 @@ public class PlayerController : MonoBehaviour {
 
                 <SectionTitle title={t("projects.escapeEngine.section5")} />
                 <SectionText text={t("projects.escapeEngine.section5Text1")} />
+                <a href="https://cxssiopee.itch.io/escape-the-engine" target="_blank" className="text-emerald-400 hover:underline">
+                    Itch.io
+                </a>
             </div>
         </div>
     );
