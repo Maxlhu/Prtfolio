@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 
@@ -10,6 +10,9 @@ const obelisk_preview = ""; // placeholder
 export function ObeliskProjectPage() {
     const { t } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {

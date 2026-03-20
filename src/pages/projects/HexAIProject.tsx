@@ -1,14 +1,15 @@
 import { useTranslation } from "react-i18next";
-import { BulletPoint, CodeBlock, MediumProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, CodeBlock, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 import hex_home from "../../assets/hex_home.png";
-// import hex_preview from "../../assets/hex_preview.png";
-const hex_preview = "";
 
 export function HexAIProjectPage() {
     const { t } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {

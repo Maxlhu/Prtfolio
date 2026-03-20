@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-const lerp = (a, b, t) => a + (b - a) * t;
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 const COLORS = [
   { h: 140, s: 60, l: 12 },
@@ -17,12 +17,12 @@ export default function ForestBg() {
   const [colorIdx, setColorIdx] = useState(0);
   const [nextColorIdx, setNextColorIdx] = useState(1);
   const [colorT, setColorT] = useState(0);
-  const rafRef = useRef();
+  const rafRef = useRef<number | undefined>(undefined);
   const lastShiftRef = useRef(Date.now());
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    const handleMove = (e) => {
+    const handleMove = (e: any) => {
       setMouse({
         x: (e.clientX / window.innerWidth) * 100,
         y: (e.clientY / window.innerHeight) * 100,
@@ -51,7 +51,11 @@ export default function ForestBg() {
       rafRef.current = requestAnimationFrame(animate);
     };
     rafRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(rafRef.current);
+    return () => {
+      if (rafRef.current !== undefined) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
   }, [mouse]);
 
   const c1 = COLORS[colorIdx];

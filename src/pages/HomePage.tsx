@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
-import { SmallProjectCard } from "../components/SmallProjectCard";
 import { ProjectCategories } from "../components/ProjectCategories";
 import { HeaderDesktop } from "../components/HeaderDesktop";
 import { Footer } from "../components/Footer";

@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export function ProjectCard({
     title,
@@ -18,10 +19,10 @@ export function ProjectCard({
     reward?: string;
 }) {
     const { t } = useTranslation();
-
+    const navigate = useNavigate();
     return (
         <button
-            onClick={() => projectUrl && window.open(projectUrl, "_blank")}
+            onClick={() => projectUrl && navigate(projectUrl)}
             className="group relative flex gap-5 p-5 rounded-2xl w-full text-left overflow-hidden"
             style={{
                 background: "linear-gradient(135deg, #18181b 0%, #1c1c1f 100%)",

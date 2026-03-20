@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import trydon_home from "../../assets/trydon_home.png";
 import trydon_web_screen1 from "../../assets/trydon_web_screen1.png";
-import { BulletPoint, CodeBlock, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/ProjectPageComponents";
+import { BulletPoint, MediumProjectImage, ProjectImage, SectionText, SectionTitle } from "../../components/projectPageComponents";
 import { useEffect, useState } from "react";
 import { HeaderDesktop } from "../../components/HeaderDesktop";
 
@@ -11,6 +11,9 @@ const trydon_preview = "";
 export function TrydonWebsiteProjectPage() {
     const { t } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {

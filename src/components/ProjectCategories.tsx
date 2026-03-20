@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import desjungles_preview from "../assets/desjungles_preview.png";
 import dia_jiro_preview   from "../assets/dia_jiro_preview.png";
 import trydon_preview     from "../assets/trydon_preview.png";
@@ -191,10 +192,11 @@ const CATEGORIES: Category[] = (Object.keys(CATEGORY_META) as CategoryId[]).map(
 // ─── Inner project card ───────────────────────────────────────────────────────
 
 function ProjectCard({ project }: { project: Project }) {
+    const navigate = useNavigate();
     return (
         <button className="group flex flex-col justify-between border border-white/10 rounded-sm p-5 gap-4
                         transition-all duration-300 hover:border-white/30 hover:bg-white/3"
-                        onClick={() => window.open(project.projectUrl || "#", "_blank")}>
+                        onClick={() => project.projectUrl && navigate(project.projectUrl)}>
             <div className="flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-2">
                     <h3 className="font-mono text-sm font-semibold text-white leading-snug">
