@@ -46,7 +46,7 @@ export function HexAIProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-orange-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        AI · Game Theory · Solo Project
+                        {t("projects.hexAI.context2")}
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
                         {t("projects.hexAI.heroTitle")}

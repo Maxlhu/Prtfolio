@@ -110,6 +110,8 @@
             "techno4": "Shopify App",
             "techno5": "MongoDB",
             "context": "Startup project - Polytechnique Montréal & HEC Montréal incubators",
+            "context2": "Startup Project",
+            "heroSubtitle": "An AI-powered size recommendation system that uses precise body measurements to determine how garments will fit before purchasing online.",
 
             "section1": "The Context",
             "section1Text1": "Buying clothes online is convenient but sizing remains one of the biggest frustrations for customers. Each brand uses different size charts and garments are often described only by simple labels such as S, M or L. Trydon was created to solve this problem by allowing shoppers to rely on their real body measurements instead of generic size labels.",
@@ -154,6 +156,8 @@
         "diajiro": {
             "title": "Dia Jiro - Sound controlled cave exploration game",
             "description": "A Unity GameJam project where players use their voice to activate crystals based on sound frequencies.",
+            "heroSubtitle": "A cave exploration game where players interact with magical crystals using their voice. Each sound frequency activates a different crystal color to progress deeper into the cave.",
+            "context2": "Game Jam project",
             "techno1": "Unity",
             "techno2": "C#",
             "techno3": "Audio Signal Processing",
@@ -212,6 +216,7 @@
             "title": "Obelisk - Calendar to Timesheet AI tool",
             "description": "Developed an AI-powered calendar to timesheet tool that automatically generates timesheet entries from calendar events. We built a web app using React and the classification in a NestJS backend. Connected to it, we have a python module using a 2 Tower AI model implementation to link calendar event with timesheet tasks",
             "context": "Polytechnic final year project",
+            "context2": "Case Study · Final Year Project",
             "techno1": "React",
             "techno2": "Python",
             "techno3": "NestJS",
@@ -282,6 +287,7 @@
             "title": "Quiz Game - Kahoot-like multiplayer platform",
             "description": "A real-time multiplayer quiz platform with web, desktop, and mobile clients. Supports text and multiple-choice questions, AI-powered question generation, autocorrect, and full injection security hardening.",
             "context": "3rd Year Team Project — Polytechnique Montréal",
+            "context2": "Team Project · 3rd Year",
             "techno1": "Angular",
             "techno2": "Flutter",
             "techno3": "NestJS",
@@ -325,6 +331,7 @@
             "techno2": "Minimax",
             "techno3": "Alpha-Beta Pruning",
             "techno4": "Game AI",
+            "context2": "AI · Game Theory · Solo Project",
             "heroTitle": "Hex AI Agent",
             "heroSubtitle": "A game-playing agent for the board game Hex, built around minimax search with a directional length and blockade-position heuristic.",
             "section1": "The Context",
@@ -352,17 +359,24 @@
             "title": "Perimeter KPI Generator - Cybersecurity internal tool",
             "description": "Finished building and extended an internal Python tool for external perimeter surveillance at Desjardins Bank. Scaled coverage from 6 KPIs over 3,000 assets in 6 hours to 18 KPIs over 17,000 assets in 2h30.",
             "context": "Internship — Desjardins Bank, Montreal",
+            "context2": "Internship · Cybersecurity · Internal Tool",
             "techno1": "Python",
             "techno2": "Cybersecurity",
             "techno3": "Automation",
             "techno4": "SIEM",
             "heroTitle": "Perimeter KPI Generator",
             "heroSubtitle": "Extended Desjardins' internal external-perimeter KPI tool, tripling KPI coverage, scaling to 17K assets, and cutting runtime by more than half.",
+            "beforeAfter": "Before → After",
             "section1": "The Context",
             "section1Text1": "During my cybersecurity internship at Desjardins, one of Quebec's largest financial institutions, I was embedded in the team responsible for external perimeter surveillance, monitoring the organization's publicly exposed web assets for security risks. The team operated an internal Python tool that generated KPI reports from a set of security scanning and intelligence sources.",
             "section1Text2": "That tool had accumulated technical debt and was constrained in both coverage and performance: it could produce 12 KPIs across roughly 3,000 assets, but a full run took 6 hours. As the number of monitored assets grew and the team needed richer reporting, the tool was becoming a bottleneck. My mandate was to overhaul it.",
             "section2": "The results",
             "section2Text1": "After the extension, the tool could generate 18 KPIs across 17,000 assets, nearly six times the original scope, and complete a full run in 2 hours and 30 minutes, cutting the previous runtime by more than half. This gave the security team a significantly richer and more current view of the organization's external exposure without any increase in manual effort.",
+            "section2Graph1": "Before",
+            "section2Graph2": "KPIs tracked",
+            "section2Graph3": "assets monitored",
+            "section2Graph4": "per full run",
+            "section2Graph5": "After",
             "section3": "How it was rebuilt",
             "section3Sub1": "Coverage — New KPIs",
             "section3Text1": "The original 12 KPIs covered a limited set of signals. I worked with the team to identify the 12 additional indicators that were most valuable for external perimeter monitoring given the tooling available in the environment. I then designed and implemented the collection, normalisation, and scoring logic for each new KPI, integrating with the existing security tooling and APIs already in use by the team. The names and specific capabilities of those tools are confidential under the internship NDA.",
@@ -413,6 +427,8 @@
             "title": "Escape The Engine - 2D platformer with losing mechanics",
             "description": "A 2D Unity platformer made for CreativeJam 2024 in a team of 7, built around the theme 'losing mechanics'. After each of the 5 levels, the player permanently loses a core ability — direction, jump, vision, and more. Set on a train.",
             "context": "CreativeJam 2024 - Team of 7",
+            "context2": "CreativeJam - 2D Platformer",
+            "teamSize": "Team of 7",
             "techno1": "Unity",
             "techno2": "C#",
             "techno3": "2D Platformer",
@@ -447,6 +463,7 @@
             "title": "Homunculus - Neural acquisition & stimulation software",
             "description": "Contributed to the desktop software for Homunculus, a company building hardware for MEA neural acquisition and stimulation. The app is built with Rust and Tauri for the hardware layer and React for the interface. I improved the frontend, added multichannel matrix visualization, and built the auto-connect system over UDP and serial.",
             "context": "Industry collaboration — Homunculus",
+            "context2": "Industry Collaboration · Neuroscience Software",
             "techno1": "Rust",
             "techno2": "Tauri",
             "techno3": "React",
@@ -482,6 +499,10 @@
             "title": "GameNight - Party tools mobile app",
             "description": "A cross-platform iOS and Android mobile app built with Expo and React Native. GameNight gives friend groups a toolkit for game nights — team generators, timers, dice, and more — with the ability to compose custom games from tools and host multiplayer sessions over WebSocket.",
             "context": "Personal Project — In Progress",
+            "context2": "Personal Project · Mobile App",
+            "badge1": "🚧 In Progress",
+            "badge2": "Coming to stores soon",
+            "badge3": "iOS & Android",
             "techno1": "Expo",
             "techno2": "React Native",
             "techno3": "NestJS",
@@ -554,6 +575,57 @@
             "cta": "Check the code"
         }
     },
+    "projectCards": {
+        "context": {
+            "personal": "Personal",
+            "startup": "Startup",
+            "hackathon": "Hackathon",
+            "school": "School",
+            "work": "Work",
+            "entrepreneurship": "Entrepreneurship"
+        },
+        "descriptions": {
+            "desjungles": "AI-powered banking app for money transfers using natural-language commands.",
+            "trydon": "AI size recommendation engine that predicts garment fit from body measurements.",
+            "diajiro": "Voice-controlled cave exploration game where sound frequency activates crystals.",
+            "obelisk": "calendar to timesheet AI system using a 2-Tower architecture for personalized results.",
+            "desjardinsKPI": "Cybersecurity KPI automation platform for enterprise perimeter monitoring.",
+            "hexAI": "Hex game AI agent built with minimax and alpha-beta pruning.",
+            "quizGame": "Real-time multiplayer quiz with WebSockets and AI-generated questions.",
+            "trydonWeb": "Startup website with ROI calculator, pricing flow and authentication.",
+            "escapeEngine": "2D platformer where one player mechanic is removed at each new level.",
+            "hmcls": "Neuroscience MEA software with real-time acquisition and signal processing.",
+            "solarNav": "Space trajectory planner using gravity assists and NASA data.",
+            "gameNight": "In-progress mobile party game with timers, dice and multiplayer sessions.",
+            "hifi": "Raspberry Pi multiroom audio system with synchronized network playback."
+        }
+    },
+    "projectCategories":{
+        "web": {
+            "title": "Web & Desktop",
+            "description": "Web platforms, full-stack systems & developer tooling."
+        },
+        "mobile": {
+            "title": "Mobile",
+            "description": "iOS, Android & cross-platform development."
+        },
+        "hardware": {
+            "title": "Hardware",
+            "description": "Embedded systems, electronics & physical computing."
+        },
+        "ai": {
+            "title": "AI",
+            "description": "Machine learning, intelligent agents & data pipelines."
+        },
+        "cyber": {
+            "title": "Cybersecurity",
+            "description": "Security automation, monitoring & cyber tooling."
+        },
+        "videoGame": {
+            "title": "VideoGame",
+            "description": "Game design, interactive experiences & real-time engines."
+        }
+    },
     "filters": {
         "category": {
             "type": "Type",
@@ -596,7 +668,8 @@
             "part2": "Passionate about building impactful software with experience in web, cybersecurity, video games, and robotics.",
             "part3": "Proven leadership as a co-founder, project manager, and university team president.",
             "part4": "Seeking a software engineering graduate job in Big Tech with strong skills in programming, system design, and teamwork."
-        }
+        }, 
+        "myPortfolio": "My Portfolio"
     },
     "footer": {
         "copyright": "© 2026 Maxence Lhuisset. All rights reserved."

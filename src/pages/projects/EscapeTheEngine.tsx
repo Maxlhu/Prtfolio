@@ -68,12 +68,12 @@ export function EscapeTheEngineProjectPage() {
                 {/* Hackathon badge */}
                 <div className="absolute top-12 right-10 z-10 border border-orange-700/50 bg-orange-950/30 backdrop-blur px-5 py-3 font-mono text-right">
                     <p className="text-orange-400 text-xs tracking-widest uppercase">CreativeJam 2024</p>
-                    <p className="text-white text-sm font-bold mt-1">Team of 7</p>
+                    <p className="text-white text-sm font-bold mt-1">{t("projects.escapeEngine.teamSize")}</p>
                 </div>
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-orange-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Game Jam · 2D Platformer
+                        {t("projects.escapeEngine.context2")}
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-2">
                         Escape

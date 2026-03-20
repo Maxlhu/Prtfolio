@@ -56,7 +56,7 @@ export function DesjardinsKPIProjectPage() {
 
                 {/* Stat badge — top right */}
                 <div className="absolute top-12 right-10 z-10 border border-red-800/50 bg-red-950/30 backdrop-blur px-6 py-4 font-mono text-right">
-                    <p className="text-red-400 text-xs tracking-widest uppercase mb-1">Before → After</p>
+                    <p className="text-red-400 text-xs tracking-widest uppercase mb-1">{t("projects.desjardinsKPI.beforeAfter")}</p>
                     <p className="text-white text-sm">12 KPIs · 3K assets · 6h</p>
                     <p className="text-red-300 text-xs my-1">↓</p>
                     <p className="text-white text-sm font-bold">18 KPIs · 17K assets · 2h30</p>
@@ -64,7 +64,7 @@ export function DesjardinsKPIProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-red-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Internship · Cybersecurity · Internal Tool
+                        {t("projects.desjardinsKPI.context2")}
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
                         {t("projects.desjardinsKPI.heroTitle")}
@@ -102,22 +102,22 @@ export function DesjardinsKPIProjectPage() {
                 {/* Performance comparison block */}
                 <div className="mt-6 mb-8 grid grid-cols-2 gap-4">
                     <div className="border border-zinc-700 bg-zinc-900 p-5">
-                        <p className="text-zinc-400 font-mono text-xs tracking-widest uppercase mb-3">Before</p>
+                        <p className="text-zinc-400 font-mono text-xs tracking-widest uppercase mb-3">{t("projects.desjardinsKPI.section2Graph1")}</p>
                         <p className="text-4xl font-black text-white mb-1">6</p>
-                        <p className="text-zinc-400 text-sm">KPIs tracked</p>
+                        <p className="text-zinc-400 text-sm">{t("projects.desjardinsKPI.section2Graph2")}</p>
                         <p className="text-4xl font-black text-white mt-4 mb-1">3 000</p>
-                        <p className="text-zinc-400 text-sm">assets monitored</p>
+                        <p className="text-zinc-400 text-sm">{t("projects.desjardinsKPI.section2Graph3")}</p>
                         <p className="text-4xl font-black text-white mt-4 mb-1">6h</p>
-                        <p className="text-zinc-400 text-sm">per full run</p>
+                        <p className="text-zinc-400 text-sm">{t("projects.desjardinsKPI.section2Graph4")}</p>
                     </div>
                     <div className="border border-red-800/60 bg-red-950/20 p-5">
-                        <p className="text-red-400 font-mono text-xs tracking-widest uppercase mb-3">After</p>
+                        <p className="text-red-400 font-mono text-xs tracking-widest uppercase mb-3">{t("projects.desjardinsKPI.section2Graph5")}</p>
                         <p className="text-4xl font-black text-white mb-1">18</p>
-                        <p className="text-zinc-400 text-sm">KPIs tracked <span className="text-red-400">+50%</span></p>
+                        <p className="text-zinc-400 text-sm">{t("projects.desjardinsKPI.section2Graph2")} <span className="text-red-400">+50%</span></p>
                         <p className="text-4xl font-black text-white mt-4 mb-1">17 000</p>
-                        <p className="text-zinc-400 text-sm">assets monitored <span className="text-red-400">+467%</span></p>
+                        <p className="text-zinc-400 text-sm">{t("projects.desjardinsKPI.section2Graph3")} <span className="text-red-400">+467%</span></p>
                         <p className="text-4xl font-black text-white mt-4 mb-1">2h30</p>
-                        <p className="text-zinc-400 text-sm">per full run <span className="text-red-400">−58%</span></p>
+                        <p className="text-zinc-400 text-sm">{t("projects.desjardinsKPI.section2Graph4")}<span className="text-red-400">−58%</span></p>
                     </div>
                 </div>
 

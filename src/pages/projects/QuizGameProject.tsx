@@ -57,7 +57,7 @@ export function QuizGameProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-violet-300 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Team Project · 3rd Year
+                        {t("projects.quizGame.context2")}
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
                         {t("projects.quizGame.heroTitle")}

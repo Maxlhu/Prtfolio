@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import desjungles_preview from "../assets/desjungles_preview.png";
 import dia_jiro_preview   from "../assets/dia_jiro_preview.png";
@@ -31,154 +32,154 @@ type Category = {
 const CATEGORY_META: Record<CategoryId, { index: string; label: string; summary: string }> = {
     "Web & Desktop": {
         index: "01",
-        label: "Web & Desktop",
-        summary: "Web platforms, full-stack systems & developer tooling.",
+        label: "projectCategories.web.title",
+        summary: "projectCategories.web.description",
     },
     mobile: {
         index: "02",
-        label: "Mobile",
-        summary: "iOS, Android & cross-platform development.",
+        label: "projectCategories.mobile.title",
+        summary: "projectCategories.mobile.description",
     },
     hardware: {
         index: "03",
-        label: "Hardware",
-        summary: "Embedded systems, electronics & physical computing.",
+        label: "projectCategories.hardware.title",
+        summary: "projectCategories.harware.description",
     },
     ai: {
         index: "04",
-        label: "AI",
-        summary: "Machine learning, intelligent agents & data pipelines.",
+        label: "projectCategories.ai.title",
+        summary: "projectCategories.ai.description",
     },
     cybersecurity: {
         index: "05",
-        label: "Cybersecurity",
-        summary: "Security automation, monitoring & cyber tooling.",
+        label: "projectCategories.cyber.title",
+        summary: "projectCategories.cyber.description",
     },
     videogame: {
         index: "06",
-        label: "VideoGame",
-        summary: "Game design, interactive experiences & real-time engines.",
+        label: "projectCategories.videoGame.title",
+        summary: "projectCategories.videoGame.description",
     },
 };
 
 const PROJECTS: Project[] = [
     {
         title: "Desjungles",
-        description: "AI-powered banking app for money transfers using natural-language commands.",
+        description: "projectCards.descriptions.desjungles",
         imageUrl: desjungles_preview,
         projectUrl: "/project/desjungles",
         techs: ["React", "Python", "NLP", "Regex"],
-        context: "Hackathon",
+        context: "projectCards.context.hackathon",
         reward: "1st - ConUHacks VI sponsor prize",
         categories: ["ai", "mobile"],
     },
     {
         title: "Trydon",
-        description: "AI size recommendation engine that predicts garment fit from body measurements.",
+        description: "projectCards.descriptions.trydon",
         imageUrl: trydon_preview,
         projectUrl: "/project/trydon",
         techs: ["React", "Machine Learning", "Scoring"],
-        context: "Entrepreneurship",
+        context: "projectCards.context.entrepreneurship",
         categories: ["Web & Desktop", "ai", "mobile"],
     },
     {
         title: "Dia Jiro",
-        description: "Voice-controlled cave exploration game where sound frequency activates crystals.",
+        description: "projectCards.descriptions.diajiro",
         imageUrl: dia_jiro_preview,
         projectUrl: "/project/diajiro",
         techs: ["Unity", "C#", "Audio Analysis"],
-        context: "School",
+        context: "projectCards.context.hackathon",
         categories: ["videogame"],
     },
     {
         title: "Obelisk",
-        description: "calendar to timesheet AI system using a 2-Tower architecture for personalized results.",
+        description: "projectCards.descriptions.obelisk",
         imageUrl: obelisk_preview,
         projectUrl: "/project/obelisk",
         techs: ["React", "NestJS", "Python", "PostgreSQL", "PyTorch"],
-        context: "Work",
+        context: "projectCards.context.school",
         categories: ["Web & Desktop", "ai"],
     },
     {
         title: "Desjardins KPI",
-        description: "Cybersecurity KPI automation platform for enterprise perimeter monitoring.",
+        description: "projectCards.descriptions.desjardinsKPI",
         imageUrl: obelisk_preview,
         projectUrl: "/project/desjardins-kpi",
         techs: ["Python", "Automation", "Monitoring"],
-        context: "Work",
+        context: "projectCards.context.work",
         categories: ["cybersecurity"],
     },
     {
         title: "Hex AI",
-        description: "Hex game AI agent built with minimax and alpha-beta pruning.",
+        description: "projectCards.descriptions.hexAI",
         imageUrl: desjungles_preview,
         projectUrl: "/project/hex-ai",
         techs: ["Python", "Minimax", "Alpha-Beta"],
-        context: "School",
+        context: "projectCards.context.school",
         categories: ["ai"],
     },
     {
         title: "Quiz Game",
-        description: "Real-time multiplayer quiz with WebSockets and AI-generated questions.",
+        description: "projectCards.descriptions.quizGame",
         imageUrl: desjungles_preview,
         projectUrl: "/project/quiz-game",
         techs: ["Angular", "Flutter", "NestJS", "WebSocket", "OpenAI"],
-        context: "Hackathon",
+        context: "projectCards.context.school",
         categories: ["Web & Desktop", "videogame", "ai"],
     },
     {
         title: "Trydon.ca",
-        description: "Startup website with ROI calculator, pricing flow and authentication.",
+        description: "projectCards.descriptions.trydonWeb",
         imageUrl: trydon_preview,
         projectUrl: "/project/trydon-website",
         techs: ["Angular", "AWS Lambda", "React", "Auth"],
-        context: "Entrepreneurship",
+        context: "projectCards.context.entrepreneurship",
         categories: ["Web & Desktop"],
     },
     {
         title: "Escape The Engine",
-        description: "2D platformer where one player mechanic is removed at each new level.",
+        description: "projectCards.descriptions.escapeEngine",
         imageUrl: desjungles_preview,
         projectUrl: "/project/escape-the-engine",
         techs: ["Unity", "C#", "2D Physics"],
-        context: "Personal",
+        context: "projectCards.context.hackathon",
         categories: ["videogame"],
     },
     {
         title: "Homunculus",
-        description: "Neuroscience MEA software with real-time acquisition and signal processing.",
+        description: "projectCards.descriptions.hmcls",
         imageUrl: obelisk_preview,
         projectUrl: "/project/homunculus",
         techs: ["Rust", "Tauri", "React", "Serial"],
-        context: "School",
+        context: "projectCards.context.startup",
         categories: ["hardware", "Web & Desktop"],
     },
     {
         title: "Solar Navigation",
-        description: "Space trajectory planner using gravity assists and NASA data.",
+        description: "projectCards.descriptions.solarNav",
         imageUrl: desjungles_preview,
         projectUrl: "/project/solar-system",
         techs: ["Python", "React", "NASA API", "Orbital Mechanics"],
-        context: "Hackathon",
+        context: "projectCards.context.hackathon",
         reward: "2nd - PolyHX 2024",
         categories: ["Web & Desktop", "videogame"],
     },
     {
         title: "GameNight",
-        description: "In-progress mobile party game with timers, dice and multiplayer sessions.",
+        description: "projectCards.descriptions.gameNight",
         imageUrl: desjungles_preview,
         projectUrl: "/project/game-night",
         techs: ["React Native", "NestJS", "Expo", "WebSocket"],
-        context: "Startup",
+        context: "projectCards.context.entrepreneurship",
         categories: ["mobile"],
     },
     {
         title: "HiFi Multiroom",
-        description: "Raspberry Pi multiroom audio system with synchronized network playback.",
+        description: "projectCards.descriptions.hifi",
         imageUrl: obelisk_preview,
         projectUrl: "/project/hifi",
         techs: ["Snapcast", "Raspberry Pi", "Linux", "React"],
-        context: "Personal",
+        context: "projectCards.context.personal",
         categories: ["hardware", "Web & Desktop"],
     },
 ];
@@ -193,6 +194,7 @@ const CATEGORIES: Category[] = (Object.keys(CATEGORY_META) as CategoryId[]).map(
 
 function ProjectCard({ project }: { project: Project }) {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     return (
         <button className="group flex flex-col justify-between border border-white/10 rounded-sm p-5 gap-4
                         transition-all duration-300 hover:border-white/30 hover:bg-white/3"
@@ -203,11 +205,11 @@ function ProjectCard({ project }: { project: Project }) {
                         {project.title}
                     </h3>
                     <span className="font-mono text-[10px] text-white/30 whitespace-nowrap pt-0.5">
-                        {project.context}
+                        {t(project.context)}
                     </span>
                 </div>
                 <p className="font-mono text-xs text-white/40 leading-relaxed">
-                    {project.description}
+                    {t(project.description)}
                 </p>
             </div>
 
@@ -233,6 +235,7 @@ function ProjectCard({ project }: { project: Project }) {
 // ─── Single accordion row ─────────────────────────────────────────────────────
 
 function CategoryRow({ category, isOpen, onToggle }: { category: Category; isOpen: boolean; onToggle: () => void }) {
+    const { t } = useTranslation()
     return (
         <div className="border-b border-white/10">
 
@@ -254,7 +257,7 @@ function CategoryRow({ category, isOpen, onToggle }: { category: Category; isOpe
                                transition-colors duration-300 flex-1"
                     style={{ color: isOpen ? "#fff" : "rgba(255,255,255,0.5)" }}
                 >
-                    {category.label}
+                    {t(category.label)}
                 </span>
 
                 <span
@@ -262,7 +265,7 @@ function CategoryRow({ category, isOpen, onToggle }: { category: Category; isOpe
                                transition-opacity duration-300"
                     style={{ opacity: isOpen ? 0 : 1 }}
                 >
-                    {category.summary}
+                    {t(category.summary)}
                 </span>
 
                 <span className="font-mono text-xs text-white/25 tabular-nums whitespace-nowrap">

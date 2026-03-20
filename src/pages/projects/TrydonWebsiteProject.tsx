@@ -57,7 +57,7 @@ export function TrydonWebsiteProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Startup · Full Product
+                        Startup · Web
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
                         Trydon.ca

@@ -45,7 +45,7 @@ export function TrydonProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-yellow-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Startup Project
+                        {t("projects.trydon.context2")}
                     </span>
 
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
@@ -53,8 +53,7 @@ export function TrydonProjectPage() {
                     </h1>
 
                     <p className="text-xl text-gray-300 font-light max-w-xl leading-relaxed">
-                        An AI-powered size recommendation system that uses precise body measurements
-                        to determine how garments will fit before purchasing online.
+                        {t("projects.trydon.heroSubtitle")}
                     </p>
                 </div>
 

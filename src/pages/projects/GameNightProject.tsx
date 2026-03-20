@@ -73,14 +73,14 @@ export function GameNightProjectPage() {
 
                 {/* "In progress" badge */}
                 <div className="absolute top-12 right-10 z-10 border border-yellow-500/50 bg-yellow-950/30 backdrop-blur px-5 py-3 font-mono text-right">
-                    <p className="text-yellow-400 text-xs tracking-widest uppercase">🚧 In Progress</p>
-                    <p className="text-white text-sm font-bold mt-1">Coming to stores soon</p>
-                    <p className="text-yellow-200/60 text-xs mt-0.5">iOS & Android</p>
+                    <p className="text-yellow-400 text-xs tracking-widest uppercase">{t("projects.gameNight.badge1")}</p>
+                    <p className="text-white text-sm font-bold mt-1">{t("projects.gameNight.badge2")}</p>
+                    <p className="text-yellow-200/60 text-xs mt-0.5">{t("projects.gameNight.badge3")}</p>
                 </div>
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-yellow-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Personal Project · Mobile App
+                        {t("projects.gameNight.context2")}
                     </span>
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
                         GameNight

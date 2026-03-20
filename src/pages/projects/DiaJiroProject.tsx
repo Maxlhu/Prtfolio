@@ -43,7 +43,7 @@ export function DiaJiroProjectPage() {
 
                 <div className="relative z-10 px-10 pb-16 max-w-4xl">
                     <span className="text-purple-400 font-mono text-sm tracking-widest uppercase mb-3 block">
-                        Game Jam Project
+                        {t("projects.diajiro.context2")}
                     </span>
 
                     <h1 className="text-7xl font-black text-white leading-none tracking-tight mb-4">
@@ -51,9 +51,7 @@ export function DiaJiroProjectPage() {
                     </h1>
 
                     <p className="text-xl text-gray-300 font-light max-w-xl leading-relaxed">
-                        A cave exploration game where players interact with magical crystals
-                        using their voice. Each sound frequency activates a different crystal
-                        color to progress deeper into the cave.
+                        {t("projects.diajiro.heroSubtitle")}
                     </p>
                 </div>
 

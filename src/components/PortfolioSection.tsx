@@ -16,7 +16,7 @@ export function PortfolioSection() {
             </h1>
 
             <button
-                onClick={() => navigate("/Prtfolio/project/portfolio")}
+                onClick={() => window.open("https://github.com/Maxlhu/Prtfolio", "_blank")}
                 className="group relative w-full rounded-2xl border border-gray-800 bg-gray-950
                            overflow-hidden hover:border-gray-500 transition-all duration-300
                            text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"

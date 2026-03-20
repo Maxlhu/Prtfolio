@@ -19,7 +19,7 @@ export default function ForestBg() {
   const [colorT, setColorT] = useState(0);
   const rafRef = useRef<number | undefined>(undefined);
   const lastShiftRef = useRef(Date.now());
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleMove = (e: any) => {
@@ -135,7 +135,7 @@ export default function ForestBg() {
           Maxence Lhuisset
         </div>
         <div className="text-base uppercase tracking-[0.35em] opacity-50">
-          ↓ My Portfolio ↓
+          ↓ {t("home.myPortfolio")} ↓
         </div>
       </div>
     </div>
